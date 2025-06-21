@@ -108,9 +108,6 @@
       <button class="btn btn-warning" onclick="removeGST()" title="Ctrl + Alt">
         <i class="fa-solid fa-minus"></i> Remove GST
       </button>
-      <button class="btn btn-danger" onclick="removeGST_CustomWay()">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> Remove GST (Custom)
-      </button>
     </div>
 
     <div class="mt-4 text-center">
@@ -220,7 +217,7 @@
     const finalPrice = total - doubledGST;
 
     result.innerText = `Base: ₹${finalPrice.toFixed(2)} (GST: ₹${(doubledGST / 2).toFixed(2)})`;
-    addToHistory(`- GST (Custom) → ₹${finalPrice.toFixed(2)} | GST ₹${(doubledGST / 2).toFixed(2)}`);
+    addToHistory(`- GST → ₹${finalPrice.toFixed(2)} | GST ₹${(doubledGST / 2).toFixed(2)}`);
   }
 
 
