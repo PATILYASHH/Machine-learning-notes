@@ -1,5 +1,7 @@
 # Quetions
 
+# *UNIT 1*
+
 ### Unit 1 - 4 marks 
 
 Q. Explain diffrent phases of predictive modeling (8 phases) [Click Here](4Q1.md)
@@ -18,6 +20,9 @@ Q. Explain Development steps in Machine Learning [Click Here](Q5.md)
 Q. Explain K-nearest nighbor algorithm in detail [Click Here](Q6.md)
 
 ---
+
+
+# *UNIT 2*
 
 ### Unit 2 - 4 marks
 
