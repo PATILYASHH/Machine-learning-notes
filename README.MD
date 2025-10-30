@@ -14,3 +14,11 @@ Q. Define Machine Learning and explain features of machine learning [Click Here]
 Q. Explain Diffrence between Artificial Intelligence and Machine learning [Click Here](Q4.md)
 
 Q. Explain Development steps in Machine Learning [Click Here](Q5.md)
+
+Q. Explain K-nearest nighbor algorithm in detail [Click Here](Q6.md)
+
+---
+
+### Unit 2 - 4 marks
+
+Q. State the goals of Machine Learning [Click Here](Q7md)
