@@ -72,11 +72,15 @@ Q. what is bias and variance ? Explain in detail [Click here](Q23.md)
 
 Q. What is bias and variance and what is Bias-variance tradeof ? [Click here](Q24.md)
 
-Q. Explain overfitting and underfitting in ML [Click here](Q25,.md)
+Q. Explain overfitting and underfitting in ML [Click here](Q25.md)
 
 
 ---
 # *UNIT 4*
 ---
 
-Q. State and prove baye's theorem with example [Click here](Q26,.md)
+Q. State and prove baye's theorem with example [Click here](Q26.md)
+
+Q. What is probability ? What are the rules of probability  [Click here](Q27.md)
+
+Q. Difference between permutation and combination  [Click here](Q28.md)
