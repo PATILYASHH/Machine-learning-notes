@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🎨 Visual Guide - Machine Learning Notes Website - Machine Learning Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
+  <meta name="theme-color" content="#0f1724" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-content">
+        <h1><a href="index.html"><i class="fas fa-brain"></i> ML Notes</a></h1>
+        <button class="bookmark-toggle" id="bookmarkToggle" title="View Bookmarks">
+          <i class="fas fa-bookmark"></i>
+          <span class="bookmark-count" id="bookmarkCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="bookmark-panel" id="bookmarkPanel">
+    <div class="bookmark-panel-header">
+      <h2><i class="fas fa-bookmark"></i> Bookmarks</h2>
+      <button class="close-panel" id="closePanel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="bookmark-list" id="bookmarkList">
+      <p class="empty-bookmarks">No bookmarks yet. Click the bookmark icon on any question to save it.</p>
+    </div>
+  </div>
+  
+  <main class="wrap content">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="visual-guide-machine-learning-notes-website">🎨 Visual Guide - Machine Learning Notes Website</h1>
+<p>This guide shows you what the website looks like and how to use each feature.</p>
+<hr>
+<h2 id="home-page-indexhtml">🏠 Home Page (index.html)</h2>
+<h3 id="header-section">Header Section</h3>
+<div class="codehilite"><pre><span></span><code>┌────────────────────────────────────────────────────┐
+│  🧠 ML Notes              📑 Bookmarks [3]         │
+└────────────────────────────────────────────────────┘
+</code></pre></div>
+
+<ul>
+<li><strong>Left</strong>: Logo and site name (clickable, returns to home)</li>
+<li><strong>Right</strong>: Bookmark button with count badge</li>
+</ul>
+<hr>
+<h3 id="hero-section">Hero Section</h3>
+<div class="codehilite"><pre><span></span><code>╔════════════════════════════════════════════════════╗
+║                                                    ║
+║       🎓 Machine Learning Notes                    ║
+║   Comprehensive study material with 28 questions   ║
+║                 across 4 units                     ║
+║                                                    ║
+╚════════════════════════════════════════════════════╝
+</code></pre></div>
+
+<ul>
+<li>Large heading with gradient text effect</li>
+<li>Subtitle with total question count</li>
+</ul>
+<hr>
+<h3 id="search-bar">Search Bar</h3>
+<div class="codehilite"><pre><span></span><code>┌────────────────────────────────────────────────────┐
+│ 🔍  Search questions...                            │
+└────────────────────────────────────────────────────┘
+</code></pre></div>
+
+<ul>
+<li>Instant search as you type</li>
+<li>Searches through all question titles</li>
+<li>Results filter in real-time</li>
+</ul>
+<hr>
+<h3 id="filter-tabs">Filter Tabs</h3>
+<div class="codehilite"><pre><span></span><code>┌──────────┬──────────┬──────────┬──────────┬──────────┐
+│   ALL    │ 📖 Unit 1│ 📖 Unit 2│ 📖 Unit 3│ 📖 Unit 4│
+└──────────┴──────────┴──────────┴──────────┴──────────┘
+    (active - blue background)
+</code></pre></div>
+
+<ul>
+<li>Click to filter by unit</li>
+<li>Active tab highlighted in cyan</li>
+<li>Works with search</li>
+</ul>
+<hr>
+<h3 id="question-cards-grid">Question Cards Grid</h3>
+<div class="codehilite"><pre><span></span><code>┌─────────────────────┐  ┌─────────────────────┐  ┌─────────────────────┐
+│ Q1                  │  │ Q2                  │  │ Q3                  │
+│                     │  │                     │  │                     │
+│ Explain different   │  │ Advantages and      │  │ Define Machine      │
+│ phases of           │  │ Disadvantages of    │  │ Learning and        │
+│ predictive          │  │ K-nearest neighbor  │  │ explain features    │
+│ modeling (8 phases) │  │ algorithm           │  │ of ML               │
+│                     │  │                     │  │                     │
+│ 🏷️ Unit 1 • 4 marks │  │ 🏷️ Unit 1 • 4 marks │  │ 🏷️ Unit 1 • 4 marks │
+│                 🔖  │  │                 🔖  │  │                 ⭐  │
+└─────────────────────┘  └─────────────────────┘  └─────────────────────┘
+   (hover: lift up)        (click anywhere)        (bookmarked: star)
+</code></pre></div>
+
+<p>Each card shows:
+- <strong>Top</strong>: Question number (Q1, Q2, etc.) in cyan badge
+- <strong>Middle</strong>: Full question text
+- <strong>Bottom Left</strong>: Unit and marks info
+- <strong>Bottom Right</strong>: Bookmark button (🔖 = not bookmarked, ⭐ = bookmarked)</p>
+<hr>
+<h3 id="card-interactions">Card Interactions</h3>
+<p><strong>Hover Effect</strong>:</p>
+<div class="codehilite"><pre><span></span><code>Normal State          Hover State
+┌───────────┐        ┌───────────┐
+│           │   →    │           │  ← Lifts up
+│           │        │           │  ← Border glows cyan
+│           │        │           │  ← Shadow appears
+└───────────┘        └───────────┘
+</code></pre></div>
+
+<p><strong>Click Actions</strong>:
+- Click card → Opens question page
+- Click bookmark → Saves/removes bookmark (stays on page)</p>
+<hr>
+<h2 id="question-page-qhtml">📄 Question Page (Q*.html)</h2>
+<h3 id="layout">Layout</h3>
+<div class="codehilite"><pre><span></span><code>┌────────────────────────────────────────────────────┐
+│  ← Back to Questions                               │
+├────────────────────────────────────────────────────┤
+│                                                    │
+│  # Question Title                                  │
+│                                                    │
+│  **Answer content with:**                          │
+│  - Tables                                          │
+│  - Lists                                           │
+│  - Code blocks                                     │
+│  - Formatted text                                  │
+│                                                    │
+└────────────────────────────────────────────────────┘
+                                               ┌────┐
+                                               │ 🔖 │ ← Floating bookmark
+                                               └────┘
+</code></pre></div>
+
+<p><strong>Features</strong>:
+- Back button at top
+- Clean, readable content
+- Floating bookmark button (bottom right)
+- Formatted markdown content</p>
+<hr>
+<h2 id="bookmark-panel">📑 Bookmark Panel</h2>
+<h3 id="closed-state">Closed State</h3>
+<div class="codehilite"><pre><span></span><code>Screen edge (hidden)
+         │
+         │  Panel off-screen →
+         │
+</code></pre></div>
+
+<h3 id="open-state">Open State</h3>
+<div class="codehilite"><pre><span></span><code>                    ┌─────────────────────────┐
+                    │ 🔖 Bookmarks        ✕  │
+                    ├─────────────────────────┤
+                    │                         │
+                    │ ┌─────────────────────┐ │
+                    │ │ Q5: Development... ✕│ │
+                    │ └─────────────────────┘ │
+                    │                         │
+                    │ ┌─────────────────────┐ │
+                    │ │ Q3: Define ML...   ✕│ │
+                    │ └─────────────────────┘ │
+                    │                         │
+                    │ ┌─────────────────────┐ │
+                    │ │ Q1: Predictive...  ✕│ │
+                    │ └─────────────────────┘ │
+                    │                         │
+                    └─────────────────────────┘
+                       (slides in from right)
+</code></pre></div>
+
+<p><strong>Features</strong>:
+- Slides in from right side
+- Shows all bookmarked questions
+- Click question to navigate
+- Click ✕ to remove bookmark
+- Click outside or close button to dismiss</p>
+<hr>
+<h2 id="mobile-view">📱 Mobile View</h2>
+<h3 id="home-page-phone">Home Page (Phone)</h3>
+<div class="codehilite"><pre><span></span><code>┌────────────────┐
+│ 🧠 ML Notes 🔖3│
+├────────────────┤
+│                │
+│   🎓 ML Notes  │
+│   28 questions │
+│                │
+├────────────────┤
+│ 🔍 Search...   │
+├────────────────┤
+│ ALL │ U1│ U2  │ ← Horizontal scroll
+├────────────────┤
+│ ┌────────────┐ │
+│ │ Q1         │ │
+│ │            │ │
+│ │ Explain... │ │ ← Single column
+│ │            │ │
+│ │ Unit 1  🔖 │ │
+│ └────────────┘ │
+│ ┌────────────┐ │
+│ │ Q2         │ │
+│ │            │ │
+│ │ Advantages │ │
+│ │            │ │
+│ │ Unit 1  🔖 │ │
+│ └────────────┘ │
+│                │
+│     (scroll)   │
+└────────────────┘
+</code></pre></div>
+
+<p><strong>Mobile Optimizations</strong>:
+- Single column layout
+- Larger touch targets
+- Horizontal scroll filters
+- Full-width bookmark panel
+- Optimized font sizes</p>
+<hr>
+<h2 id="color-scheme">🎨 Color Scheme</h2>
+<h3 id="main-colors">Main Colors</h3>
+<div class="codehilite"><pre><span></span><code>Background:  ███  #0f1724 (Dark Blue)
+Card:        ███  #1a2332 (Darker Blue)
+Accent:      ███  #7dd3fc (Cyan)
+Text:        ███  #e6eef8 (Light Gray)
+Muted:       ███  #9fb0c9 (Medium Gray)
+</code></pre></div>
+
+<h3 id="usage">Usage</h3>
+<div class="codehilite"><pre><span></span><code>┌─────────────────────────┐
+│ Header (bg: #0f1724)    │  ← Dark blue
+├─────────────────────────┤
+│                         │
+│  ┌──────────────────┐   │
+│  │ Card (#1a2332)   │   │  ← Darker blue card
+│  │                  │   │
+│  │ Text (#e6eef8)   │   │  ← Light text
+│  │                  │   │
+│  │ Badge (#7dd3fc)  │   │  ← Cyan accent
+│  └──────────────────┘   │
+│                         │
+│ Background gradient     │  ← Multiple blues
+└─────────────────────────┘
+</code></pre></div>
+
+<hr>
+<h2 id="animations">✨ Animations</h2>
+<h3 id="hover-animation">Hover Animation</h3>
+<div class="codehilite"><pre><span></span><code>Frame 1: Card at rest
+Frame 2: Card lifts up 4px
+Frame 3: Border changes to cyan
+Frame 4: Shadow appears
+
+Duration: 0.3 seconds
+Easing: ease (smooth)
+</code></pre></div>
+
+<h3 id="search-animation">Search Animation</h3>
+<div class="codehilite"><pre><span></span><code>Type: &quot;machine&quot;
+  ↓
+Results filter (instant)
+  ↓
+Cards fade in (0.3s animation)
+</code></pre></div>
+
+<h3 id="bookmark-panel_1">Bookmark Panel</h3>
+<div class="codehilite"><pre><span></span><code><span class="nl">Closed</span><span class="p">:</span><span class="w"> </span><span class="n">translateX</span><span class="p">(</span><span class="mi">100</span><span class="o">%</span><span class="p">)</span><span class="w">  </span><span class="p">[</span><span class="n">Off</span><span class="w"> </span><span class="n">screen</span><span class="p">]</span>
+<span class="w">  </span><span class="err">↓</span>
+<span class="nl">Opening</span><span class="p">:</span><span class="w"> </span><span class="n">translateX</span><span class="p">(</span><span class="mi">50</span><span class="o">%</span><span class="p">)</span><span class="w">  </span><span class="p">[</span><span class="n">Sliding</span><span class="p">...]</span>
+<span class="w">  </span><span class="err">↓</span>
+<span class="nl">Open</span><span class="p">:</span><span class="w"> </span><span class="n">translateX</span><span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)</span><span class="w">      </span><span class="p">[</span><span class="n">Fully</span><span class="w"> </span><span class="n">visible</span><span class="p">]</span>
+
+<span class="nl">Duration</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="n">seconds</span>
+</code></pre></div>
+
+<hr>
+<h2 id="user-flow-examples">🎯 User Flow Examples</h2>
+<h3 id="scenario-1-finding-a-question">Scenario 1: Finding a Question</h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="kr">open</span><span class="n">s</span><span class="w"> </span><span class="n">website</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Types</span><span class="w"> </span><span class="s">&quot;bias&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">search</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">Sees</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="p">(</span><span class="n">Q14</span><span class="p">,</span><span class="w"> </span><span class="n">Q23</span><span class="p">,</span><span class="w"> </span><span class="n">Q24</span><span class="p">)</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Clicks</span><span class="w"> </span><span class="n">Q14</span><span class="w"> </span><span class="n">card</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">5.</span><span class="w"> </span><span class="kr">Read</span><span class="n">s</span><span class="w"> </span><span class="n">answer</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">Clicks</span><span class="w"> </span><span class="s">&quot;Back to Questions&quot;</span>
+</code></pre></div>
+
+<h3 id="scenario-2-bookmarking-for-later">Scenario 2: Bookmarking for Later</h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">browsing</span><span class="w"> </span><span class="n">questions</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Sees</span><span class="w"> </span><span class="n">important</span><span class="w"> </span><span class="n">question</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">Clicks</span><span class="w"> </span><span class="n">bookmark</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="n">card</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Star</span><span class="w"> </span><span class="n">appears</span><span class="w"> </span><span class="p">(</span><span class="n">bookmarked</span><span class="p">)</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">Badge</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="n">increases</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">Later</span><span class="p">:</span><span class="w"> </span><span class="n">clicks</span><span class="w"> </span><span class="n">bookmark</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">header</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">7.</span><span class="w"> </span><span class="n">Sees</span><span class="w"> </span><span class="kr">save</span><span class="n">d</span><span class="w"> </span><span class="n">questions</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">panel</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">8.</span><span class="w"> </span><span class="n">Clicks</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">navigate</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">question</span>
+</code></pre></div>
+
+<h3 id="scenario-3-unit-wise-study">Scenario 3: Unit-wise Study</h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">wants</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">study</span><span class="w"> </span><span class="n">Unit</span><span class="w"> </span><span class="mf">2</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Clicks</span><span class="w"> </span><span class="s">&quot;Unit 2&quot;</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="nb">tab</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">Sees</span><span class="w"> </span><span class="kr">on</span><span class="n">ly</span><span class="w"> </span><span class="n">Unit</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="n">questions</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Studies</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="kr">on</span><span class="n">e</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">Bookmarks</span><span class="w"> </span><span class="n">important</span><span class="w"> </span><span class="kr">on</span><span class="n">es</span>
+<span class="w">   </span><span class="err">↓</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">Switches</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Unit</span><span class="w"> </span><span class="mf">3</span>
+</code></pre></div>
+
+<hr>
+<h2 id="responsive-breakpoints">📊 Responsive Breakpoints</h2>
+<h3 id="desktop-1200px">Desktop (1200px+)</h3>
+<div class="codehilite"><pre><span></span><code>┌─────────────────────────────────────────────┐
+│  Header                                     │
+├─────────────────────────────────────────────┤
+│                                             │
+│  ┌───────┐  ┌───────┐  ┌───────┐  ┌───────┐│
+│  │ Card  │  │ Card  │  │ Card  │  │ Card  ││
+│  └───────┘  └───────┘  └───────┘  └───────┘│
+│  ┌───────┐  ┌───────┐  ┌───────┐  ┌───────┐│
+│  │ Card  │  │ Card  │  │ Card  │  │ Card  ││
+│  └───────┘  └───────┘  └───────┘  └───────┘│
+│                                             │
+└─────────────────────────────────────────────┘
+         4 columns, max-width: 1200px
+</code></pre></div>
+
+<h3 id="tablet-768px-1200px">Tablet (768px - 1200px)</h3>
+<div class="codehilite"><pre><span></span><code>┌────────────────────────────┐
+│  Header                    │
+├────────────────────────────┤
+│                            │
+│  ┌──────┐      ┌──────┐   │
+│  │ Card │      │ Card │   │
+│  └──────┘      └──────┘   │
+│  ┌──────┐      ┌──────┐   │
+│  │ Card │      │ Card │   │
+│  └──────┘      └──────┘   │
+│                            │
+└────────────────────────────┘
+      2-3 columns, flexible
+</code></pre></div>
+
+<h3 id="mobile-768px">Mobile (&lt; 768px)</h3>
+<div class="codehilite"><pre><span></span><code>┌──────────┐
+│  Header  │
+├──────────┤
+│          │
+│ ┌──────┐ │
+│ │ Card │ │
+│ └──────┘ │
+│ ┌──────┐ │
+│ │ Card │ │
+│ └──────┘ │
+│ ┌──────┐ │
+│ │ Card │ │
+│ └──────┘ │
+│          │
+└──────────┘
+  1 column
+</code></pre></div>
+
+<hr>
+<h2 id="interactive-elements">🔧 Interactive Elements</h2>
+<h3 id="buttons">Buttons</h3>
+<div class="codehilite"><pre><span></span><code><span class="nl">Normal</span><span class="p">:</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="p">]</span>
+<span class="nl">Hover</span><span class="p">:</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="p">]</span><span class="w">  </span><span class="err">←</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="n">color</span><span class="o">/</span><span class="n">lifts</span>
+<span class="nl">Active</span><span class="p">:</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="p">]</span><span class="w">  </span><span class="err">←</span><span class="w"> </span><span class="n">Slightly</span><span class="w"> </span><span class="n">pressed</span>
+<span class="nl">Focus</span><span class="p">:</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="p">]</span><span class="w">  </span><span class="err">←</span><span class="w"> </span><span class="n">Outline</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">keyboard</span>
+</code></pre></div>
+
+<h3 id="search-input">Search Input</h3>
+<div class="codehilite"><pre><span></span><code>Empty:      [ 🔍 Search questions...           ]
+Typing:     [ 🔍 machine learn|                ]
+Focused:    [ 🔍 Search questions...           ]
+            └────────────────────────────────────┘
+                     ↑ Cyan border when focused
+</code></pre></div>
+
+<h3 id="bookmark-button">Bookmark Button</h3>
+<div class="codehilite"><pre><span></span><code>Not Bookmarked:  [ 🔖 ]  ← Empty bookmark
+Bookmarked:      [ ⭐ ]  ← Solid star (cyan bg)
+Hover:           [ 🔖 ]  ← Border glows
+</code></pre></div>
+
+<hr>
+<h2 id="tips-for-best-experience">🎓 Tips for Best Experience</h2>
+<h3 id="desktop-users">Desktop Users:</h3>
+<ol>
+<li>Use search for quick finding</li>
+<li>Hover over cards to preview interaction</li>
+<li>Open bookmarks in side panel</li>
+<li>Use keyboard shortcuts (Tab, Enter)</li>
+</ol>
+<h3 id="mobile-users">Mobile Users:</h3>
+<ol>
+<li>Swipe filter tabs horizontally</li>
+<li>Tap anywhere on card to open</li>
+<li>Use back button to return</li>
+<li>Bookmark panel is full-screen</li>
+</ol>
+<h3 id="all-users">All Users:</h3>
+<ol>
+<li>Bookmark important questions early</li>
+<li>Combine search and filters</li>
+<li>Use back button instead of browser back</li>
+<li>Bookmarks save automatically</li>
+</ol>
+<hr>
+<h2 id="visual-features-summary">🎉 Visual Features Summary</h2>
+<p>✅ <strong>Modern Cards</strong> - Clean, organized layout
+✅ <strong>Color Coded</strong> - Blue theme with cyan accents
+✅ <strong>Smooth Animations</strong> - Professional transitions
+✅ <strong>Clear Typography</strong> - Easy to read on all devices
+✅ <strong>Visual Hierarchy</strong> - Important info stands out
+✅ <strong>Responsive Images</strong> - Scales with screen size
+✅ <strong>Icon Library</strong> - Font Awesome icons throughout
+✅ <strong>Gradient Effects</strong> - Modern visual appeal</p>
+<hr>
+<p><strong>The website is designed to be beautiful, functional, and easy to use! 🎨✨</strong></p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="VISUAL_GUIDE.html" data-title="🎨 Visual Guide - Machine Learning Notes Website" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+  </main>
+  
+  <footer class="wrap site-footer">
+    <p>Machine Learning Notes • Study Material</p>
+  </footer>
+  
+  <script src="static/script.js"></script>
+</body>
+</html>

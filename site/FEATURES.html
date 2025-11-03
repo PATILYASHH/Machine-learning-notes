@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Website Features Guide - Machine Learning Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
+  <meta name="theme-color" content="#0f1724" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-content">
+        <h1><a href="index.html"><i class="fas fa-brain"></i> ML Notes</a></h1>
+        <button class="bookmark-toggle" id="bookmarkToggle" title="View Bookmarks">
+          <i class="fas fa-bookmark"></i>
+          <span class="bookmark-count" id="bookmarkCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="bookmark-panel" id="bookmarkPanel">
+    <div class="bookmark-panel-header">
+      <h2><i class="fas fa-bookmark"></i> Bookmarks</h2>
+      <button class="close-panel" id="closePanel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="bookmark-list" id="bookmarkList">
+      <p class="empty-bookmarks">No bookmarks yet. Click the bookmark icon on any question to save it.</p>
+    </div>
+  </div>
+  
+  <main class="wrap content">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="website-features-guide">Website Features Guide</h1>
+<h2 id="overview">Overview</h2>
+<p>This Machine Learning Notes website is a modern, interactive platform for studying ML concepts with 28 comprehensive questions across 4 units.</p>
+<h2 id="key-features">Key Features</h2>
+<h3 id="1-modern-dark-theme">1. 🎨 Modern Dark Theme</h3>
+<ul>
+<li>Eye-friendly dark color scheme</li>
+<li>Smooth animations and transitions</li>
+<li>Professional gradient effects</li>
+<li>High contrast for readability</li>
+</ul>
+<h3 id="2-mobile-responsive-design">2. 📱 Mobile Responsive Design</h3>
+<p>The website automatically adapts to:
+- <strong>Desktop</strong> (1200px+): Full-width cards in grid layout
+- <strong>Tablet</strong> (768px - 1200px): Optimized 2-column layout
+- <strong>Mobile</strong> (&lt; 768px): Single column, touch-friendly interface</p>
+<h3 id="3-bookmark-system">3. 🔖 Bookmark System</h3>
+<p><strong>How it works:</strong>
+- Click the bookmark icon on any question card
+- Or click the floating bookmark button on any question page
+- Bookmarks are saved in browser's localStorage
+- View all bookmarks by clicking the bookmark button in header
+- Remove bookmarks anytime with one click</p>
+<p><strong>Features:</strong>
+- Persistent across browser sessions
+- Shows bookmark count in header
+- Quick access to favorite questions
+- Organized by most recent</p>
+<h3 id="4-smart-search">4. 🔍 Smart Search</h3>
+<p><strong>Usage:</strong>
+1. Type in the search box at the top of the page
+2. Results filter in real-time as you type
+3. Searches through all question titles
+4. Case-insensitive matching</p>
+<p><strong>Tips:</strong>
+- Search for keywords like "algorithm", "bias", "ML"
+- Combine with unit filters for precise results
+- Clear search to see all questions again</p>
+<h3 id="5-filter-by-unit">5. 🏷️ Filter by Unit</h3>
+<p><strong>Available Filters:</strong>
+- All Questions (default)
+- Unit 1: Fundamentals &amp; KNN
+- Unit 2: Applications &amp; Classification
+- Unit 3: Performance &amp; Optimization
+- Unit 4: Probability &amp; Statistics</p>
+<p><strong>How to use:</strong>
+- Click any unit tab to filter
+- Combine with search for targeted results
+- Active filter is highlighted in blue</p>
+<h3 id="6-question-cards-layout">6. 📊 Question Cards Layout</h3>
+<p><strong>Each card shows:</strong>
+- Question number (Q1, Q2, etc.)
+- Full question text
+- Unit badge
+- Marks indicator (4 marks or 8 marks)
+- Bookmark button</p>
+<p><strong>Interaction:</strong>
+- Click anywhere on the card to view the answer
+- Hover for visual feedback
+- Bookmark without navigating away</p>
+<h3 id="7-question-pages">7. 📄 Question Pages</h3>
+<p><strong>Features:</strong>
+- Clean, readable content layout
+- Formatted tables and code blocks
+- "Back to Questions" button
+- Floating bookmark button
+- Proper heading hierarchy
+- Syntax highlighting for code</p>
+<h3 id="8-data-persistence">8. 💾 Data Persistence</h3>
+<p><strong>What's saved:</strong>
+- Bookmarked questions
+- Bookmark timestamps
+- User preferences</p>
+<p><strong>Storage:</strong>
+- Uses browser's localStorage
+- No server required
+- Works offline after first load
+- Data stays private on your device</p>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="browser-compatibility">Browser Compatibility</h3>
+<ul>
+<li>Chrome/Edge: Full support</li>
+<li>Firefox: Full support</li>
+<li>Safari: Full support</li>
+<li>Mobile browsers: Full support</li>
+</ul>
+<h3 id="performance">Performance</h3>
+<ul>
+<li>Fast load times</li>
+<li>Minimal JavaScript</li>
+<li>Optimized CSS</li>
+<li>No external dependencies (except Font Awesome icons)</li>
+</ul>
+<h3 id="accessibility">Accessibility</h3>
+<ul>
+<li>Semantic HTML</li>
+<li>ARIA labels where needed</li>
+<li>Keyboard navigation support</li>
+<li>Reduced motion support for accessibility</li>
+</ul>
+<h2 id="usage-tips">Usage Tips</h2>
+<h3 id="for-students">For Students</h3>
+<ol>
+<li><strong>Bookmark exam-important questions</strong> for quick revision</li>
+<li><strong>Use search</strong> to find topics you're studying</li>
+<li><strong>Filter by unit</strong> when preparing unit-wise</li>
+<li><strong>Mobile access</strong> for studying on the go</li>
+</ol>
+<h3 id="for-quick-reference">For Quick Reference</h3>
+<ol>
+<li>Open the website on your phone</li>
+<li>Bookmark frequently referenced questions</li>
+<li>Access bookmarks panel for instant navigation</li>
+<li>Search for specific concepts during exams</li>
+</ol>
+<h3 id="for-organized-study">For Organized Study</h3>
+<ol>
+<li>Study one unit at a time using filters</li>
+<li>Bookmark completed questions</li>
+<li>Track progress through bookmark count</li>
+<li>Review bookmarked questions before exam</li>
+</ol>
+<h2 id="customization">Customization</h2>
+<h3 id="for-developers">For Developers</h3>
+<p>The website is built with:
+- <strong>Python</strong> (build.py): Static site generator
+- <strong>HTML/CSS</strong>: Modern responsive design
+- <strong>JavaScript</strong>: Interactive features
+- <strong>Markdown</strong>: Content format</p>
+<h3 id="files-to-modify">Files to Modify</h3>
+<ul>
+<li><code>static/style.css</code>: Change colors, spacing, fonts</li>
+<li><code>static/script.js</code>: Add new features or modify behavior</li>
+<li><code>templates/base.html</code>: Change layout structure</li>
+<li><code>build.py</code>: Modify generation logic</li>
+</ul>
+<h3 id="adding-new-questions">Adding New Questions</h3>
+<ol>
+<li>Create a new <code>.md</code> file in root directory</li>
+<li>Add entry to <code>QUESTION_MAP</code> in <code>build.py</code></li>
+<li>Run <code>python3 build.py</code></li>
+<li>New question appears on the website</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="bookmarks-not-saving">Bookmarks not saving?</h3>
+<ul>
+<li>Check if browser allows localStorage</li>
+<li>Try a different browser</li>
+<li>Clear browser cache and try again</li>
+</ul>
+<h3 id="search-not-working">Search not working?</h3>
+<ul>
+<li>Refresh the page</li>
+<li>Check browser console for errors</li>
+<li>Ensure JavaScript is enabled</li>
+</ul>
+<h3 id="mobile-view-issues">Mobile view issues?</h3>
+<ul>
+<li>Clear browser cache</li>
+<li>Update to latest browser version</li>
+<li>Try landscape/portrait orientation</li>
+</ul>
+<h3 id="page-not-loading">Page not loading?</h3>
+<ul>
+<li>Check internet connection (for Font Awesome icons)</li>
+<li>Verify all files are in correct directories</li>
+<li>Rebuild site with <code>python3 build.py</code></li>
+</ul>
+<h2 id="future-enhancements-possible">Future Enhancements (Possible)</h2>
+<ul>
+<li>Export bookmarks feature</li>
+<li>Print-friendly view</li>
+<li>Dark/Light theme toggle</li>
+<li>Progress tracking</li>
+<li>Notes on questions</li>
+<li>Share functionality</li>
+<li>PDF export</li>
+</ul>
+<h2 id="support">Support</h2>
+<p>For issues or suggestions, please open an issue on the GitHub repository.</p>
+<hr>
+<p><strong>Happy Studying! 📚</strong></p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="FEATURES.html" data-title="Website Features Guide" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+  </main>
+  
+  <footer class="wrap site-footer">
+    <p>Machine Learning Notes • Study Material</p>
+  </footer>
+  
+  <script src="static/script.js"></script>
+</body>
+</html>

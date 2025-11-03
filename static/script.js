@@ -230,6 +230,145 @@ class QuestionFilter {
   }
 }
 
+// Text-to-Speech System
+class TextToSpeech {
+  constructor() {
+    this.synth = window.speechSynthesis;
+    this.utterance = null;
+    this.isPaused = false;
+    this.isPlaying = false;
+    this.init();
+  }
+
+  init() {
+    const ttsBtn = document.getElementById('ttsBtn');
+    if (!ttsBtn) return;
+
+    // Check if browser supports speech synthesis
+    if (!this.synth) {
+      ttsBtn.style.display = 'none';
+      console.warn('Text-to-speech not supported in this browser');
+      return;
+    }
+
+    ttsBtn.addEventListener('click', () => this.toggleSpeech());
+  }
+
+  getTextContent() {
+    const answerContent = document.getElementById('answerContent');
+    if (!answerContent) return '';
+
+    // Extract text from the answer content, excluding code blocks
+    let text = '';
+    const walker = document.createTreeWalker(
+      answerContent,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: (node) => {
+          // Skip code blocks and script tags
+          const parent = node.parentElement;
+          if (!parent || parent.tagName === 'CODE' || parent.tagName === 'SCRIPT' || 
+              parent.tagName === 'STYLE' || parent.closest('pre')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    let node;
+    while ((node = walker.nextNode()) !== null) {
+      const textContent = node.textContent.trim();
+      if (textContent) {
+        text += textContent + ' ';
+      }
+    }
+
+    return text.trim();
+  }
+
+  toggleSpeech() {
+    const ttsBtn = document.getElementById('ttsBtn');
+    
+    if (this.isPlaying && !this.isPaused) {
+      // Pause speech
+      this.synth.pause();
+      this.isPaused = true;
+      ttsBtn.innerHTML = '<i class="fas fa-play"></i> <span>Resume</span>';
+      ttsBtn.classList.add('paused');
+    } else if (this.isPaused) {
+      // Resume speech
+      this.synth.resume();
+      this.isPaused = false;
+      ttsBtn.innerHTML = '<i class="fas fa-pause"></i> <span>Pause</span>';
+      ttsBtn.classList.remove('paused');
+    } else {
+      // Start new speech
+      this.startSpeech();
+    }
+  }
+
+  startSpeech() {
+    const ttsBtn = document.getElementById('ttsBtn');
+    const text = this.getTextContent();
+
+    if (!text) {
+      console.warn('No text content found to read');
+      return;
+    }
+
+    // Cancel any ongoing speech
+    this.synth.cancel();
+
+    // Create new utterance
+    this.utterance = new SpeechSynthesisUtterance(text);
+    
+    // Configure utterance
+    this.utterance.rate = 1.0; // Normal speed
+    this.utterance.pitch = 1.0; // Normal pitch
+    this.utterance.volume = 1.0; // Full volume
+
+    // Set up event listeners
+    this.utterance.onstart = () => {
+      this.isPlaying = true;
+      this.isPaused = false;
+      ttsBtn.innerHTML = '<i class="fas fa-pause"></i> <span>Pause</span>';
+      ttsBtn.classList.add('playing');
+    };
+
+    this.utterance.onend = () => {
+      this.isPlaying = false;
+      this.isPaused = false;
+      ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> <span>Read Aloud</span>';
+      ttsBtn.classList.remove('playing', 'paused');
+    };
+
+    this.utterance.onerror = (event) => {
+      console.error('Speech synthesis error:', event);
+      this.isPlaying = false;
+      this.isPaused = false;
+      ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> <span>Read Aloud</span>';
+      ttsBtn.classList.remove('playing', 'paused');
+    };
+
+    // Start speaking
+    this.synth.speak(this.utterance);
+  }
+
+  stop() {
+    if (this.synth) {
+      this.synth.cancel();
+      this.isPlaying = false;
+      this.isPaused = false;
+      const ttsBtn = document.getElementById('ttsBtn');
+      if (ttsBtn) {
+        ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> <span>Read Aloud</span>';
+        ttsBtn.classList.remove('playing', 'paused');
+      }
+    }
+  }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize bookmark manager
@@ -238,6 +377,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize question filter (only on index page)
   if (document.querySelector('.questions-grid')) {
     const questionFilter = new QuestionFilter();
+  }
+
+  // Initialize text-to-speech (only on question pages)
+  if (document.getElementById('answerContent')) {
+    const tts = new TextToSpeech();
   }
 
   // Add smooth scroll behavior
