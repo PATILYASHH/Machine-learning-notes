@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deployment Guide - Machine Learning Notes Website - Machine Learning Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
+  <meta name="theme-color" content="#0f1724" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-content">
+        <h1><a href="index.html"><i class="fas fa-brain"></i> ML Notes</a></h1>
+        <button class="bookmark-toggle" id="bookmarkToggle" title="View Bookmarks">
+          <i class="fas fa-bookmark"></i>
+          <span class="bookmark-count" id="bookmarkCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="bookmark-panel" id="bookmarkPanel">
+    <div class="bookmark-panel-header">
+      <h2><i class="fas fa-bookmark"></i> Bookmarks</h2>
+      <button class="close-panel" id="closePanel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="bookmark-list" id="bookmarkList">
+      <p class="empty-bookmarks">No bookmarks yet. Click the bookmark icon on any question to save it.</p>
+    </div>
+  </div>
+  
+  <main class="wrap content">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="deployment-guide-machine-learning-notes-website">Deployment Guide - Machine Learning Notes Website</h1>
+<h2 id="overview">Overview</h2>
+<p>This guide will help you deploy your Machine Learning notes website to the internet so anyone can access it.</p>
+<h2 id="option-1-netlify-recommended">Option 1: Netlify (Recommended) ⭐</h2>
+<p>Netlify is the easiest option and is already configured for this project.</p>
+<h3 id="steps">Steps:</h3>
+<ol>
+<li>
+<p><strong>Push to GitHub</strong> (if not already done)
+   <code>bash
+   git add .
+   git commit -m "Added modern website with bookmarks and mobile responsive design"
+   git push origin main</code></p>
+</li>
+<li>
+<p><strong>Sign up for Netlify</strong></p>
+</li>
+<li>Go to https://www.netlify.com/</li>
+<li>
+<p>Click "Sign up" and use your GitHub account</p>
+</li>
+<li>
+<p><strong>Create a new site</strong></p>
+</li>
+<li>Click "Add new site" → "Import an existing project"</li>
+<li>Choose "GitHub"</li>
+<li>Authorize Netlify to access your repositories</li>
+<li>
+<p>Select <code>Machine-learning-notes</code> repository</p>
+</li>
+<li>
+<p><strong>Configure build settings</strong></p>
+</li>
+<li>Netlify will automatically detect <code>netlify.toml</code></li>
+<li>Build command: Already configured</li>
+<li>Publish directory: Already configured</li>
+<li>
+<p>Click "Deploy site"</p>
+</li>
+<li>
+<p><strong>Wait for deployment</strong> (2-3 minutes)</p>
+</li>
+<li>Netlify will build and deploy your site</li>
+<li>
+<p>You'll get a URL like: <code>https://your-site-name.netlify.app</code></p>
+</li>
+<li>
+<p><strong>Custom domain (Optional)</strong></p>
+</li>
+<li>Go to Site settings → Domain management</li>
+<li>Add your custom domain</li>
+<li>Follow DNS configuration steps</li>
+</ol>
+<h3 id="benefits">Benefits:</h3>
+<ul>
+<li>✅ Free hosting</li>
+<li>✅ Automatic HTTPS</li>
+<li>✅ Auto-deploy on git push</li>
+<li>✅ Fast CDN</li>
+<li>✅ Easy to use</li>
+</ul>
+<hr>
+<h2 id="option-2-github-pages">Option 2: GitHub Pages</h2>
+<p>GitHub Pages is another free option that works directly from your repository.</p>
+<h3 id="steps_1">Steps:</h3>
+<ol>
+<li><strong>Update netlify.toml</strong> (add GitHub Pages workflow)
+   Create <code>.github/workflows/deploy.yml</code>:
+   ```yaml
+   name: Deploy to GitHub Pages</li>
+</ol>
+<p>on:
+     push:
+       branches: [ main ]</p>
+<p>jobs:
+     build-and-deploy:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v2</p>
+<div class="codehilite"><pre><span></span><code><span class="w">     </span>-<span class="w"> </span>name:<span class="w"> </span>Set<span class="w"> </span>up<span class="w"> </span>Python
+<span class="w">       </span>uses:<span class="w"> </span>actions/setup-python@v2
+<span class="w">       </span>with:
+<span class="w">         </span>python-version:<span class="w"> </span>&#39;3.x&#39;
+
+<span class="w">     </span>-<span class="w"> </span>name:<span class="w"> </span>Install<span class="w"> </span>dependencies
+<span class="w">       </span>run:<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="w">     </span>-<span class="w"> </span>name:<span class="w"> </span>Build<span class="w"> </span>site
+<span class="w">       </span>run:<span class="w"> </span>python3<span class="w"> </span>build.py
+
+<span class="w">     </span>-<span class="w"> </span>name:<span class="w"> </span>Deploy<span class="w"> </span>to<span class="w"> </span>GitHub<span class="w"> </span>Pages
+<span class="w">       </span>uses:<span class="w"> </span>peaceiris/actions-gh-pages@v3
+<span class="w">       </span>with:
+<span class="w">         </span>github_token:<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">GITHUB_TOKEN</span> <span class="cp">}</span>}
+<span class="w">         </span>publish_dir:<span class="w"> </span>./site
+</code></pre></div>
+
+<p>```</p>
+<ol>
+<li><strong>Enable GitHub Pages</strong></li>
+<li>Go to repository Settings</li>
+<li>Navigate to "Pages"</li>
+<li>Source: Deploy from a branch</li>
+<li>Branch: gh-pages</li>
+<li>
+<p>Save</p>
+</li>
+<li>
+<p><strong>Push changes</strong>
+   <code>bash
+   git add .github/workflows/deploy.yml
+   git commit -m "Add GitHub Pages deployment"
+   git push</code></p>
+</li>
+<li>
+<p><strong>Access your site</strong></p>
+</li>
+<li>URL: <code>https://PATILYASHH.github.io/Machine-learning-notes/</code></li>
+</ol>
+<h3 id="benefits_1">Benefits:</h3>
+<ul>
+<li>✅ Free</li>
+<li>✅ Direct from GitHub</li>
+<li>✅ Automatic HTTPS</li>
+<li>✅ Easy integration</li>
+</ul>
+<hr>
+<h2 id="option-3-vercel">Option 3: Vercel</h2>
+<p>Vercel is similar to Netlify with excellent performance.</p>
+<h3 id="steps_2">Steps:</h3>
+<ol>
+<li><strong>Sign up for Vercel</strong></li>
+<li>Go to https://vercel.com</li>
+<li>
+<p>Sign up with GitHub</p>
+</li>
+<li>
+<p><strong>Import project</strong></p>
+</li>
+<li>Click "New Project"</li>
+<li>
+<p>Import <code>Machine-learning-notes</code> from GitHub</p>
+</li>
+<li>
+<p><strong>Configure</strong></p>
+</li>
+<li>Framework Preset: Other</li>
+<li>Build Command: <code>pip install -r requirements.txt &amp;&amp; python3 build.py</code></li>
+<li>Output Directory: <code>site</code></li>
+<li>
+<p>Install Command: <code>pip install -r requirements.txt</code></p>
+</li>
+<li>
+<p><strong>Deploy</strong></p>
+</li>
+<li>Click "Deploy"</li>
+<li>Get URL: <code>https://machine-learning-notes.vercel.app</code></li>
+</ol>
+<h3 id="benefits_2">Benefits:</h3>
+<ul>
+<li>✅ Very fast CDN</li>
+<li>✅ Free tier</li>
+<li>✅ Great analytics</li>
+<li>✅ Edge functions support</li>
+</ul>
+<hr>
+<h2 id="option-4-local-network-share">Option 4: Local Network Share</h2>
+<p>For local access only (e.g., in classroom or home network).</p>
+<h3 id="steps_3">Steps:</h3>
+<ol>
+<li>
+<p><strong>Start the server</strong>
+   <code>bash
+   cd site
+   python3 -m http.server 8000</code></p>
+</li>
+<li>
+<p><strong>Find your IP address</strong>
+   ```bash
+   # On Linux/Mac
+   ifconfig | grep "inet "
+   # or
+   hostname -I</p>
+</li>
+</ol>
+<p># On Windows
+   ipconfig
+   ```</p>
+<ol>
+<li><strong>Share the URL</strong></li>
+<li>Share <code>http://YOUR_IP:8000</code> with others on same network</li>
+<li>Example: <code>http://192.168.1.100:8000</code></li>
+</ol>
+<h3 id="benefits_3">Benefits:</h3>
+<ul>
+<li>✅ No internet needed</li>
+<li>✅ Fast local access</li>
+<li>✅ Good for classrooms</li>
+<li>❌ Only works on same network</li>
+</ul>
+<hr>
+<h2 id="option-5-self-hosting">Option 5: Self-Hosting</h2>
+<p>For those who want full control.</p>
+<h3 id="requirements">Requirements:</h3>
+<ul>
+<li>A server (VPS, cloud instance, or home server)</li>
+<li>Domain name (optional)</li>
+<li>Basic server knowledge</li>
+</ul>
+<h3 id="steps_4">Steps:</h3>
+<ol>
+<li>
+<p><strong>Copy site files to server</strong>
+   <code>bash
+   scp -r site/* user@your-server:/var/www/html/ml-notes/</code></p>
+</li>
+<li>
+<p><strong>Configure web server (Nginx example)</strong>
+   ```nginx
+   server {
+       listen 80;
+       server_name your-domain.com;</p>
+<p>root /var/www/html/ml-notes;
+   index index.html;</p>
+<p>location / {
+       try_files $uri $uri/ =404;
+   }
+   }
+   ```</p>
+</li>
+<li>
+<p><strong>Enable HTTPS</strong> (with Let's Encrypt)
+   <code>bash
+   sudo certbot --nginx -d your-domain.com</code></p>
+</li>
+</ol>
+<h3 id="benefits_4">Benefits:</h3>
+<ul>
+<li>✅ Full control</li>
+<li>✅ Custom configuration</li>
+<li>✅ Can add backend features</li>
+<li>❌ Requires maintenance</li>
+</ul>
+<hr>
+<h2 id="comparison-table">Comparison Table</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Netlify</th>
+<th>GitHub Pages</th>
+<th>Vercel</th>
+<th>Local</th>
+<th>Self-Host</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Free</td>
+<td>Free</td>
+<td>Free</td>
+<td>Free</td>
+<td>Paid</td>
+</tr>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Easy</td>
+<td>Medium</td>
+<td>Easy</td>
+<td>Easy</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td><strong>Speed</strong></td>
+<td>Fast</td>
+<td>Medium</td>
+<td>Very Fast</td>
+<td>Very Fast</td>
+<td>Varies</td>
+</tr>
+<tr>
+<td><strong>Custom Domain</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>HTTPS</strong></td>
+<td>✅ Auto</td>
+<td>✅ Auto</td>
+<td>✅ Auto</td>
+<td>❌</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td><strong>Build on Push</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td><strong>Analytics</strong></td>
+<td>Basic</td>
+<td>❌</td>
+<td>Advanced</td>
+<td>❌</td>
+<td>Custom</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="recommended-approach">Recommended Approach</h2>
+<p>For this project, I recommend <strong>Netlify</strong> because:</p>
+<ol>
+<li>✅ Already configured (<code>netlify.toml</code> exists)</li>
+<li>✅ Zero configuration needed</li>
+<li>✅ Automatic deploys on push</li>
+<li>✅ Free SSL certificate</li>
+<li>✅ Great performance</li>
+<li>✅ Easy to use interface</li>
+</ol>
+<hr>
+<h2 id="post-deployment-checklist">Post-Deployment Checklist</h2>
+<p>After deploying, verify:</p>
+<ul>
+<li>[ ] Homepage loads correctly</li>
+<li>[ ] All 28 questions are visible</li>
+<li>[ ] Search functionality works</li>
+<li>[ ] Filter tabs work</li>
+<li>[ ] Bookmarking works (save and remove)</li>
+<li>[ ] Mobile responsive (test on phone)</li>
+<li>[ ] All question pages load</li>
+<li>[ ] Back buttons work</li>
+<li>[ ] Bookmark panel opens/closes</li>
+<li>[ ] CSS and JavaScript load properly</li>
+</ul>
+<hr>
+<h2 id="updating-the-site">Updating the Site</h2>
+<p>After deployment, when you make changes:</p>
+<ol>
+<li>
+<p><strong>Update content</strong>
+   <code>bash
+   # Edit markdown files or build.py
+   vim Q29.md  # Add new question</code></p>
+</li>
+<li>
+<p><strong>Rebuild</strong>
+   <code>bash
+   python3 build.py</code></p>
+</li>
+<li>
+<p><strong>Test locally</strong>
+   <code>bash
+   cd site &amp;&amp; python3 -m http.server 8000</code></p>
+</li>
+<li>
+<p><strong>Push to GitHub</strong>
+   <code>bash
+   git add .
+   git commit -m "Added Q29"
+   git push</code></p>
+</li>
+<li>
+<p><strong>Auto-deploy</strong></p>
+</li>
+<li>Netlify/Vercel: Automatically rebuilds</li>
+<li>GitHub Pages: Workflow runs automatically</li>
+<li>Local/Self-host: Manual update needed</li>
+</ol>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="build-fails-on-netlify">Build fails on Netlify</h3>
+<ul>
+<li>Check Python version in Netlify UI (should be 3.8+)</li>
+<li>Verify <code>requirements.txt</code> has all dependencies</li>
+<li>Check build logs for specific errors</li>
+</ul>
+<h3 id="site-works-locally-but-not-on-deployment">Site works locally but not on deployment</h3>
+<ul>
+<li>Check file paths (use relative paths)</li>
+<li>Verify all files are committed to git</li>
+<li>Check case sensitivity in file names</li>
+</ul>
+<h3 id="bookmarks-dont-persist">Bookmarks don't persist</h3>
+<ul>
+<li>This is expected - localStorage is per-domain</li>
+<li>Each deployment URL will have separate bookmarks</li>
+<li>This is a feature, not a bug (privacy)</li>
+</ul>
+<h3 id="css-not-loading">CSS not loading</h3>
+<ul>
+<li>Check browser console for 404 errors</li>
+<li>Verify <code>static/</code> folder is in publish directory</li>
+<li>Check <code>netlify.toml</code> publish directory setting</li>
+</ul>
+<hr>
+<h2 id="need-help">Need Help?</h2>
+<ul>
+<li><strong>Netlify Docs</strong>: https://docs.netlify.com/</li>
+<li><strong>GitHub Pages Docs</strong>: https://docs.github.com/pages</li>
+<li><strong>Vercel Docs</strong>: https://vercel.com/docs</li>
+</ul>
+<hr>
+<p><strong>Your site is ready to share with the world! 🚀</strong></p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="DEPLOYMENT.html" data-title="Deployment Guide - Machine Learning Notes Website" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+  </main>
+  
+  <footer class="wrap site-footer">
+    <p>Machine Learning Notes • Study Material</p>
+  </footer>
+  
+  <script src="static/script.js"></script>
+</body>
+</html>

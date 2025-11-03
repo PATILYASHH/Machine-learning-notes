@@ -117,11 +117,15 @@ def build():
             "marks": marks
         })
 
-        # Add back button and bookmark button to content
+        # Add back button, TTS button and bookmark button to content
         back_btn = '<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a>'
+        tts_btn = '<button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button>'
         bookmark_btn = f'<button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="{slug}" data-title="{title}" title="Bookmark this question"><i class="far fa-bookmark"></i></button>'
         
-        full_content = back_btn + html_body + bookmark_btn
+        # Wrap the answer content in a div for TTS to target
+        answer_content = f'<div id="answerContent" class="answer-content">{html_body}</div>'
+        
+        full_content = back_btn + tts_btn + answer_content + bookmark_btn
 
         # render page
         base = (TEMPLATES / "base.html").read_text(encoding="utf-8")
