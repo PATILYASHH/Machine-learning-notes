@@ -84,3 +84,41 @@ Q. State and prove baye's theorem with example [Click here](Q26.md)
 Q. What is probability ? What are the rules of probability  [Click here](Q27.md)
 
 Q. Difference between permutation and combination  [Click here](Q28.md)
+
+---
+
+## Notes website generator
+
+This repository now includes a small static site generator to turn these markdown notes into a browsable website.
+
+Quick start to build the site locally:
+
+1. (Optional but recommended) create and activate a Python virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Build the site:
+
+```bash
+python3 build.py
+```
+
+The generated site will be written to the `site/` directory. Open `site/index.html` in your browser to view.
+
+Files added:
+
+- `build.py` — generator script that converts each top-level `.md` into an HTML page and creates `site/index.html`.
+- `templates/base.html` — simple HTML template used for pages.
+- `static/style.css` — basic styling for the notes site.
+- `requirements.txt` — minimal Python dependencies (markdown, pygments).
+
+If you want a different layout, front-matter, tags, or search, tell me and I can extend the generator.
