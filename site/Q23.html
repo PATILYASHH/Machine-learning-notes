@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q23 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="bias-and-variance-detailed-explanation-8-marks">Bias and Variance — Detailed Explanation (8 Marks)</h3>
+<p><strong>Definition (short):</strong><br>
+- <strong>Bias</strong> is the error from <strong>wrong assumptions</strong> in the learning algorithm. High bias means the model is too simple and cannot capture the true pattern (underfitting).<br>
+- <strong>Variance</strong> is the error from <strong>too much sensitivity</strong> to the training data. High variance means the model fits noise and does not generalize well (overfitting).</p>
+<hr>
+<h3 id="error-decomposition-important-concept">Error decomposition (important concept)</h3>
+<p>For a prediction problem, the expected squared error at a point can be decomposed as:</p>
+<p>Expected Error = Bias² + Variance + Irreducible Error (noise)</p>
+<ul>
+<li><strong>Bias²:</strong> Error from the model’s assumptions (systematic error).  </li>
+<li><strong>Variance:</strong> Error from model’s sensitivity to training data (how much predictions change with different training sets).  </li>
+<li><strong>Irreducible Error:</strong> Noise in data we cannot remove.</li>
+</ul>
+<hr>
+<h3 id="intuition-with-examples">Intuition with examples</h3>
+<ul>
+<li><strong>High Bias (Underfitting):</strong>  </li>
+<li>Example: Using a straight line (linear model) to fit strongly curved data.  </li>
+<li>
+<p>Effect: Both training and test errors are high. Model is too simple.</p>
+</li>
+<li>
+<p><strong>High Variance (Overfitting):</strong>  </p>
+</li>
+<li>Example: A very deep decision tree that perfectly classifies training data but fails on new data.  </li>
+<li>Effect: Training error is low, test error is high. Model learned noise.</li>
+</ul>
+<hr>
+<h3 id="how-to-detect-practical-signs">How to detect (practical signs)</h3>
+<ul>
+<li><strong>Learning curves (train vs test error as data size grows):</strong></li>
+<li><strong>High bias:</strong> Both train &amp; test errors high and close to each other; adding more data usually won’t help much.</li>
+<li><strong>High variance:</strong> Training error low, test error much higher; adding more training data often reduces variance and test error.</li>
+<li><strong>Cross-validation:</strong> Large gap between cross-val performance and training performance indicates high variance.</li>
+</ul>
+<hr>
+<h3 id="how-to-fix-reduce">How to fix / reduce</h3>
+<ul>
+<li><strong>To reduce Bias (make model more flexible):</strong></li>
+<li>Use a more complex model (e.g., add polynomial features, deeper tree, neural network).  </li>
+<li>Add relevant features (feature engineering).  </li>
+<li>
+<p>Reduce regularization strength.</p>
+</li>
+<li>
+<p><strong>To reduce Variance (make model simpler or more robust):</strong></p>
+</li>
+<li>Get more training data.  </li>
+<li>Use simpler model or reduce model complexity.  </li>
+<li>Apply regularization (L1, L2).  </li>
+<li>Use ensemble methods (Bagging, Random Forest) or dropout (for neural nets).  </li>
+<li>Feature selection / dimensionality reduction (PCA).</li>
+</ul>
+<hr>
+<h3 id="practical-tradeoff-strategy">Practical tradeoff &amp; strategy</h3>
+<ul>
+<li>There is no free lunch — decreasing bias often increases variance and vice versa.  </li>
+<li><strong>Goal:</strong> find the sweet spot that minimizes total error (Bias² + Variance).  </li>
+<li>Typical workflow:</li>
+<li>Start simple, check errors.  </li>
+<li>If underfitting → increase complexity / add features.  </li>
+<li>If overfitting → regularize / get more data / simplify model.  </li>
+<li>Use cross-validation to choose hyperparameters that balance bias and variance.</li>
+</ul>
+<hr>
+<h3 id="in-short-one-liner">In short (one-liner)</h3>
+<ul>
+<li><strong>Bias</strong> = error from wrong assumptions (underfit).  </li>
+<li><strong>Variance</strong> = error from sensitivity to data (overfit).<br>
+Balance them to minimize total prediction error.</li>
+</ul>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

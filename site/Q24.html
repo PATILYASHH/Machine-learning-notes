@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q24 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="what-is-bias-and-variance-what-is-bias-variance-tradeoff-8-marks">What is Bias and Variance? What is Bias-Variance Tradeoff? – 8 Marks</h3>
+<hr>
+<h3 id="1-definition-of-bias"><strong>1. Definition of Bias</strong></h3>
+<ul>
+<li><strong>Bias</strong> is the <strong>error caused by simplifying assumptions</strong> in the learning algorithm.  </li>
+<li>A model with <strong>high bias</strong> is too simple and fails to capture the underlying patterns in the data.  </li>
+<li>It leads to <strong>underfitting</strong>, where the model performs poorly on both training and testing data.</li>
+</ul>
+<p><strong>Example:</strong><br>
+Using a <strong>linear model</strong> to fit a complex curved dataset — the model cannot capture the real relationship.</p>
+<hr>
+<h3 id="2-definition-of-variance"><strong>2. Definition of Variance</strong></h3>
+<ul>
+<li><strong>Variance</strong> is the <strong>error caused by sensitivity to small changes in the training data</strong>.  </li>
+<li>A model with <strong>high variance</strong> learns noise instead of the actual pattern.  </li>
+<li>It leads to <strong>overfitting</strong>, where the model performs well on training data but poorly on new data.</li>
+</ul>
+<p><strong>Example:</strong><br>
+A <strong>deep decision tree</strong> that perfectly fits training data but fails to generalize to test data.</p>
+<hr>
+<h3 id="3-bias-variance-tradeoff"><strong>3. Bias-Variance Tradeoff</strong></h3>
+<ul>
+<li>The <strong>Bias-Variance Tradeoff</strong> is the <strong>balance</strong> between the two sources of error (bias and variance) to achieve <strong>optimal model performance</strong>.  </li>
+<li>Increasing model complexity <strong>reduces bias</strong> but <strong>increases variance</strong>.  </li>
+<li>Simplifying the model <strong>reduces variance</strong> but <strong>increases bias</strong>.</li>
+</ul>
+<hr>
+<h3 id="4-the-relationship"><strong>4. The Relationship</strong></h3>
+<p>| Model Complexity | Bias | Variance | Total Error |
+|------------------|-------|-----------|--------------|
+| Low Complexity (Simple Model) | High | Low | High |
+| Medium Complexity (Balanced Model) | Moderate | Moderate | <strong>Low (Best)</strong> |
+| High Complexity (Very Complex Model) | Low | High | High |</p>
+<hr>
+<h3 id="5-graphical-view-conceptually"><strong>5. Graphical View (Conceptually)</strong></h3>
+<p>Imagine a <strong>U-shaped curve</strong> of total error:
+- Left side → High bias (underfitting)<br>
+- Right side → High variance (overfitting)<br>
+- Middle → Optimal tradeoff (best generalization)</p>
+<hr>
+<h3 id="6-real-world-example"><strong>6. Real-World Example</strong></h3>
+<ul>
+<li>Suppose we train a model to predict house prices:  </li>
+<li><strong>High Bias:</strong> The model uses only one feature (like area). It’s too simple → poor predictions.  </li>
+<li><strong>High Variance:</strong> The model uses every detail (like owner’s name, color of walls) → fits training data too closely.  </li>
+<li><strong>Tradeoff:</strong> A balanced model uses the <strong>right features</strong> to generalize well.</li>
+</ul>
+<hr>
+<h3 id="7-goal-of-ml-model"><strong>7. Goal of ML Model</strong></h3>
+<p>The goal of Machine Learning is to <strong>minimize both bias and variance</strong> to achieve <strong>low total error</strong> and <strong>good generalization</strong> on unseen data.</p>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+- <strong>Bias</strong> → Error due to wrong assumptions (underfitting).<br>
+- <strong>Variance</strong> → Error due to over-sensitivity (overfitting).<br>
+- <strong>Bias-Variance Tradeoff</strong> → Finding the perfect balance where total prediction error is minimum.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

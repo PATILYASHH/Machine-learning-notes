@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q19 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="write-a-note-on-bootstrap-sampling-4-marks">Write a Note on Bootstrap Sampling (4 Marks)</h3>
+<p><strong>Definition:</strong><br>
+Bootstrap Sampling is a <strong>statistical method</strong> used in Machine Learning to <strong>estimate the accuracy and stability</strong> of a model.<br>
+It involves <strong>randomly selecting samples from a dataset with replacement</strong>, meaning the same data point can appear more than once in a sample.</p>
+<hr>
+<h3 id="key-points"><strong>Key Points:</strong></h3>
+<ol>
+<li><strong>Sampling with Replacement:</strong>  </li>
+<li>Each time a data point is chosen, it is <strong>put back into the dataset</strong> before the next selection.  </li>
+<li>
+<p>This allows some data points to appear multiple times in one sample.</p>
+</li>
+<li>
+<p><strong>Purpose:</strong>  </p>
+</li>
+<li>To estimate <strong>model performance</strong> when the available dataset is small.  </li>
+<li>
+<p>To create multiple <strong>training datasets</strong> for techniques like <strong>Bagging (Bootstrap Aggregating)</strong>.</p>
+</li>
+<li>
+<p><strong>Use in Ensemble Methods:</strong>  </p>
+</li>
+<li>
+<p>Bootstrap Sampling is the <strong>foundation of Bagging</strong>, used in models like <strong>Random Forest</strong>.</p>
+</li>
+<li>
+<p><strong>Advantage:</strong>  </p>
+</li>
+<li>Helps in <strong>reducing overfitting</strong> and <strong>improving model stability</strong> by training on varied samples.</li>
+</ol>
+<hr>
+<h3 id="example"><strong>Example:</strong></h3>
+<p>If we have a dataset <code>[1, 2, 3, 4, 5]</code>,<br>
+a bootstrap sample could be <code>[2, 4, 4, 1, 5]</code> — notice that some elements repeat because of replacement.</p>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+Bootstrap Sampling is a <strong>resampling technique</strong> that helps <strong>estimate accuracy and variability</strong> by training models on multiple random subsets of data.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

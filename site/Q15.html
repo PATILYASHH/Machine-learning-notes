@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q15 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="confusion-matrix-4-marks">Confusion Matrix (4 Marks)</h3>
+<p><strong>Definition:</strong><br>
+A <strong>Confusion Matrix</strong> is a table used to evaluate the performance of a classification model by comparing <strong>actual</strong> labels with <strong>predicted</strong> labels.</p>
+<hr>
+<h3 id="structure">Structure</h3>
+<p>|                     | <strong>Predicted Positive</strong> | <strong>Predicted Negative</strong> |
+|---------------------|------------------------|------------------------|
+| <strong>Actual Positive</strong> | True Positive (TP)     | False Negative (FN)    |
+| <strong>Actual Negative</strong> | False Positive (FP)    | True Negative (TN)     |</p>
+<p>Example (spam detection):</p>
+<p>TP: Spam correctly labeled as spam.</p>
+<p>FP: Regular email wrongly labeled as spam.</p>
+<p>FN: Spam wrongly labeled as regular email.</p>
+<p>TN: Regular email correctly labeled as regular.</p>
+<hr>
+<h3 id="explanation">Explanation</h3>
+<ul>
+<li><strong>True Positive (TP):</strong> Model correctly predicts positive class.  </li>
+<li><strong>True Negative (TN):</strong> Model correctly predicts negative class.  </li>
+<li><strong>False Positive (FP):</strong> Model wrongly predicts positive (Type I Error).  </li>
+<li><strong>False Negative (FN):</strong> Model wrongly predicts negative (Type II Error).  </li>
+</ul>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

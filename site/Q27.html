@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q27 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="what-is-probability-what-are-the-rules-of-probability-8-marks"><strong>What is Probability? What are the Rules of Probability? – 8 Marks</strong></h3>
+<hr>
+<h3 id="1-definition-of-probability"><strong>1. Definition of Probability</strong></h3>
+<p><strong>Probability</strong> is a branch of mathematics that measures the <strong>likelihood or chance</strong> of an event happening.<br>
+It tells us <strong>how likely</strong> it is that a certain outcome will occur.</p>
+<p>[
+P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}
+]</p>
+<p>Where:<br>
+- <strong>P(E)</strong> = Probability of event E<br>
+- ( 0 \leq P(E) \leq 1 )</p>
+<hr>
+<h3 id="2-example"><strong>2. Example</strong></h3>
+<p>If a coin is tossed once:<br>
+- Total outcomes = {Head, Tail} → 2 outcomes<br>
+- Probability of getting Head = 1/2 = 0.5<br>
+- Probability of getting Tail = 1/2 = 0.5  </p>
+<p>So, <strong>each outcome has equal chance</strong> of occurring.</p>
+<hr>
+<h3 id="3-types-of-probability"><strong>3. Types of Probability</strong></h3>
+<ol>
+<li><strong>Theoretical Probability:</strong> Based on reasoning (e.g., coin toss).  </li>
+<li><strong>Experimental Probability:</strong> Based on actual experiments or data.  </li>
+<li><strong>Subjective Probability:</strong> Based on personal judgment or belief.</li>
+</ol>
+<hr>
+<h3 id="4-rules-of-probability"><strong>4. Rules of Probability</strong></h3>
+<h4 id="rule-1-non-negative-rule"><strong>Rule 1: Non-Negative Rule</strong></h4>
+<p>The probability of any event is <strong>always between 0 and 1</strong>.</p>
+<p>[
+0 \leq P(E) \leq 1
+]</p>
+<ul>
+<li><strong>0</strong> means the event is <strong>impossible</strong>.  </li>
+<li><strong>1</strong> means the event is <strong>certain</strong>.</li>
+</ul>
+<hr>
+<h4 id="rule-2-sum-rule-or-addition-rule"><strong>Rule 2: Sum Rule (or Addition Rule)</strong></h4>
+<p>For two <strong>mutually exclusive events</strong> A and B:</p>
+<p>[
+P(A \cup B) = P(A) + P(B)
+]</p>
+<p>If events are <strong>not mutually exclusive</strong>, then:</p>
+<p>[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+]</p>
+<hr>
+<h4 id="rule-3-complementary-rule"><strong>Rule 3: Complementary Rule</strong></h4>
+<p>The probability that an event <strong>does not occur</strong> is:</p>
+<p>[
+P(\text{not A}) = 1 - P(A)
+]</p>
+<p><strong>Example:</strong><br>
+If the chance of rain today is 0.3, then the chance of no rain = 1 - 0.3 = <strong>0.7</strong>.</p>
+<hr>
+<h4 id="rule-4-multiplication-rule"><strong>Rule 4: Multiplication Rule</strong></h4>
+<p>For <strong>independent events</strong> A and B:</p>
+<p>[
+P(A \cap B) = P(A) \times P(B)
+]</p>
+<p><strong>Example:</strong><br>
+If P(A) = 1/2 and P(B) = 1/3,<br>
+then ( P(A \cap B) = 1/2 \times 1/3 = 1/6 ).</p>
+<hr>
+<h4 id="rule-5-conditional-probability"><strong>Rule 5: Conditional Probability</strong></h4>
+<p>The probability of event A occurring given that event B has already occurred is:</p>
+<p>[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+]</p>
+<hr>
+<h3 id="5-summary-table"><strong>5. Summary Table</strong></h3>
+<p>| <strong>Rule Name</strong> | <strong>Formula</strong> | <strong>Meaning</strong> |
+|----------------|--------------|--------------|
+| Non-Negative Rule | (0 \leq P(E) \leq 1) | Probability is always between 0 and 1 |
+| Addition Rule | (P(A \cup B) = P(A) + P(B) - P(A \cap B)) | For union of events |
+| Complementary Rule | (P(\text{not A}) = 1 - P(A)) | Probability of event not happening |
+| Multiplication Rule | (P(A \cap B) = P(A) \times P(B)) | For independent events |
+| Conditional Probability | (P(A|B) = \frac{P(A \cap B)}{P(B)}) | Probability of A given B |</p>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+Probability measures how likely an event is to happen.<br>
+The <strong>rules of probability</strong> help calculate chances for single, combined, and dependent events — forming the base for <strong>Machine Learning and statistical models</strong>.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

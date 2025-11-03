@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q21 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="write-a-note-on-bagging-bootstrap-aggregation-4-marks">Write a Note on Bagging (Bootstrap Aggregation) – 4 Marks</h3>
+<p><strong>Definition:</strong><br>
+Bagging, short for <strong>Bootstrap Aggregation</strong>, is an <strong>ensemble learning technique</strong> used to improve the <strong>accuracy and stability</strong> of Machine Learning models.<br>
+It works by combining the results of <strong>multiple models</strong> trained on <strong>different bootstrap samples</strong> of the same dataset.</p>
+<hr>
+<h3 id="key-points"><strong>Key Points:</strong></h3>
+<ol>
+<li><strong>Bootstrap Sampling:</strong>  </li>
+<li>Multiple subsets of the dataset are created <strong>randomly with replacement</strong>.  </li>
+<li>
+<p>Each subset is used to train a separate model (usually of the same type).</p>
+</li>
+<li>
+<p><strong>Model Training:</strong>  </p>
+</li>
+<li>
+<p>Each model learns slightly different patterns because it sees a <strong>different portion</strong> of the data.</p>
+</li>
+<li>
+<p><strong>Aggregation Step:</strong>  </p>
+</li>
+<li>
+<p>After training, the predictions from all models are <strong>aggregated</strong> (by <strong>voting</strong> in classification or <strong>averaging</strong> in regression) to get the <strong>final output</strong>.</p>
+</li>
+<li>
+<p><strong>Purpose:</strong>  </p>
+</li>
+<li>To <strong>reduce overfitting</strong> and <strong>variance</strong> of models.  </li>
+<li>Improves prediction stability and performance.</li>
+</ol>
+<hr>
+<h3 id="example"><strong>Example:</strong></h3>
+<p>In a <strong>Random Forest</strong>, multiple decision trees are trained on different bootstrap samples, and their predictions are <strong>aggregated</strong> to produce the final result.</p>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+Bagging (Bootstrap Aggregation) is a <strong>powerful ensemble method</strong> that enhances model accuracy by <strong>training multiple models on resampled data</strong> and combining their predictions.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

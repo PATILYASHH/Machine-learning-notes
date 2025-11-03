@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q25 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="explain-overfitting-and-underfitting-in-machine-learning-8-marks">Explain Overfitting and Underfitting in Machine Learning – 8 Marks</h3>
+<hr>
+<h3 id="1-definition"><strong>1. Definition</strong></h3>
+<p>In Machine Learning, <strong>overfitting</strong> and <strong>underfitting</strong> are two common problems that affect a model’s performance and its ability to <strong>generalize</strong> to new data.</p>
+<ul>
+<li>
+<p><strong>Overfitting:</strong><br>
+  The model learns the <strong>training data too well</strong>, including its <strong>noise and outliers</strong>, and performs poorly on new unseen data.</p>
+</li>
+<li>
+<p><strong>Underfitting:</strong><br>
+  The model is <strong>too simple</strong> to capture the underlying patterns in the training data, leading to poor performance on both training and testing data.</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-overfitting-high-variance-problem"><strong>2. Overfitting (High Variance Problem)</strong></h3>
+<ul>
+<li>
+<p><strong>Meaning:</strong><br>
+  The model fits the training data perfectly but <strong>fails to generalize</strong> to new data.</p>
+</li>
+<li>
+<p><strong>Causes:</strong></p>
+</li>
+<li>Model is <strong>too complex</strong> (too many features or deep layers).  </li>
+<li><strong>Insufficient training data</strong>.  </li>
+<li><strong>Too many training epochs</strong> in neural networks.  </li>
+<li>
+<p><strong>No regularization</strong> applied.</p>
+</li>
+<li>
+<p><strong>Effects:</strong></p>
+</li>
+<li>
+<p>Very low training error but <strong>high testing error</strong>.</p>
+</li>
+<li>
+<p><strong>Example:</strong><br>
+  A decision tree that grows very deep and memorizes all training samples.</p>
+</li>
+<li>
+<p><strong>Solutions:</strong></p>
+</li>
+<li>Use <strong>regularization</strong> (L1, L2).  </li>
+<li>Use <strong>cross-validation</strong>.  </li>
+<li>Simplify the model.  </li>
+<li>Use <strong>Dropout</strong> (in neural networks).  </li>
+<li>Get more training data.</li>
+</ul>
+<hr>
+<h3 id="3-underfitting-high-bias-problem"><strong>3. Underfitting (High Bias Problem)</strong></h3>
+<ul>
+<li>
+<p><strong>Meaning:</strong><br>
+  The model is too simple to learn the patterns in data and cannot even perform well on the training set.</p>
+</li>
+<li>
+<p><strong>Causes:</strong></p>
+</li>
+<li>Model is <strong>too simple</strong> (e.g., linear model for non-linear data).  </li>
+<li><strong>Too few features</strong> or ignoring important ones.  </li>
+<li><strong>Insufficient training time</strong>.  </li>
+<li>
+<p><strong>Over-regularization</strong> (too much penalty).</p>
+</li>
+<li>
+<p><strong>Effects:</strong></p>
+</li>
+<li>High training and testing errors.  </li>
+<li>
+<p>Model fails to capture the trend of data.</p>
+</li>
+<li>
+<p><strong>Example:</strong><br>
+  Using a straight line to fit a curved dataset.</p>
+</li>
+<li>
+<p><strong>Solutions:</strong></p>
+</li>
+<li>Increase model complexity.  </li>
+<li>Add more relevant features.  </li>
+<li>Train longer or tune parameters properly.  </li>
+<li>Reduce regularization.</li>
+</ul>
+<hr>
+<h3 id="4-comparison-table"><strong>4. Comparison Table</strong></h3>
+<p>| <strong>Aspect</strong> | <strong>Overfitting</strong> | <strong>Underfitting</strong> |
+|-------------|------------------|------------------|
+| <strong>Definition</strong> | Learns training data too well (including noise) | Fails to learn from training data |
+| <strong>Error on Training Data</strong> | Very Low | High |
+| <strong>Error on Testing Data</strong> | High | High |
+| <strong>Model Complexity</strong> | Too Complex | Too Simple |
+| <strong>Main Cause</strong> | High Variance | High Bias |
+| <strong>Solution</strong> | Simplify model, regularize | Increase complexity, add features |</p>
+<hr>
+<h3 id="5-ideal-model"><strong>5. Ideal Model</strong></h3>
+<ul>
+<li>The <strong>best model</strong> lies between overfitting and underfitting.  </li>
+<li>It has <strong>low training error</strong> and <strong>low testing error</strong>, meaning it <strong>generalizes well</strong>.</li>
+</ul>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+- <strong>Overfitting</strong> → Model learns noise (high variance, poor generalization).<br>
+- <strong>Underfitting</strong> → Model misses patterns (high bias, poor learning).<br>
+- <strong>Goal:</strong> Find a balance that achieves <strong>low total error</strong> and <strong>good generalization</strong>.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

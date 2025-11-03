@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q20 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="difference-between-bagging-and-aggregation-4-marks">Difference Between Bagging and Aggregation (4 Marks)</h3>
+<p>| <strong>Aspect</strong> | <strong>Bagging (Bootstrap Aggregating)</strong> | <strong>Aggregation</strong> |
+|-------------|-------------------------------------|------------------|
+| <strong>Definition</strong> | Bagging is a Machine Learning ensemble technique that combines results from <strong>multiple models trained on different bootstrap samples</strong> of the data. | Aggregation is the <strong>process of combining the outputs</strong> of multiple models to produce a <strong>final prediction</strong>. |
+| <strong>Data Used</strong> | Uses <strong>bootstrap samples</strong> (sampling with replacement) from the training data. | Uses <strong>predictions from different models</strong> — may or may not use bootstrap samples. |
+| <strong>Purpose</strong> | To <strong>reduce variance</strong> and <strong>prevent overfitting</strong> in high-variance models like decision trees. | To <strong>combine predictions</strong> for improved overall accuracy and stability. |
+| <strong>Example</strong> | Random Forest uses bagging to train many decision trees on different bootstrap samples. | The final voting or averaging step that combines all model outputs is aggregation. |</p>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+Bagging is the <strong>method of training models</strong> on bootstrap samples, while aggregation is the <strong>step of combining their predictions</strong> to form the final result.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

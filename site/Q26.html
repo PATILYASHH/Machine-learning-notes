@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q26 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="bayes-theorem-statement-proof-and-example-8-marks"><strong>Bayes’ Theorem – Statement, Proof, and Example (8 Marks)</strong></h3>
+<hr>
+<h3 id="1-definition"><strong>1. Definition</strong></h3>
+<p><strong>Bayes’ Theorem</strong> is a fundamental concept in probability and Machine Learning that helps us <strong>update the probability of a hypothesis</strong> based on new evidence.<br>
+It is used to find <strong>conditional probability</strong> — the probability of an event given that another event has already occurred.</p>
+<hr>
+<h3 id="2-statement-of-bayes-theorem"><strong>2. Statement of Bayes’ Theorem</strong></h3>
+<p>If <strong>A</strong> and <strong>B</strong> are two events, and <strong>P(B) ≠ 0</strong>, then Bayes’ theorem is stated as:</p>
+<p>[
+P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}
+]</p>
+<hr>
+<h3 id="3-meaning-of-terms"><strong>3. Meaning of Terms</strong></h3>
+<p>| Symbol | Meaning |
+|---------|----------|
+| <strong>P(A)</strong> | Prior probability of event A (before seeing evidence) |
+| <strong>P(B|A)</strong> | Likelihood — probability of observing B given A is true |
+| <strong>P(B)</strong> | Total probability of event B (evidence) |
+| <strong>P(A|B)</strong> | Posterior probability — probability of A given that B has occurred |</p>
+<hr>
+<h3 id="4-proof-of-bayes-theorem"><strong>4. Proof of Bayes’ Theorem</strong></h3>
+<p>From the <strong>definition of conditional probability</strong>:</p>
+<p>[
+P(A|B) = \frac{P(A \cap B)}{P(B)} \quad ...(1)
+]</p>
+<p>and</p>
+<p>[
+P(B|A) = \frac{P(A \cap B)}{P(A)} \quad ...(2)
+]</p>
+<p>From equation (2),<br>
+[
+P(A \cap B) = P(B|A) \times P(A)
+]</p>
+<p>Substitute this value into equation (1):</p>
+<p>[
+P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}
+]</p>
+<p>Hence, <strong>proved</strong> ✅</p>
+<hr>
+<h3 id="5-example"><strong>5. Example</strong></h3>
+<p>A company manufactures bulbs in <strong>two factories</strong>, <strong>F1</strong> and <strong>F2</strong>.</p>
+<ul>
+<li><strong>F1</strong> produces <strong>60%</strong> of total bulbs.  </li>
+<li><strong>F2</strong> produces <strong>40%</strong> of total bulbs.  </li>
+<li><strong>1%</strong> of bulbs from <strong>F1</strong> are defective.  </li>
+<li><strong>2%</strong> of bulbs from <strong>F2</strong> are defective.</li>
+</ul>
+<p>Now, if a <strong>randomly selected bulb is defective</strong>, find the probability that it was produced by <strong>Factory F1</strong>.</p>
+<hr>
+<h3 id="solution"><strong>Solution</strong></h3>
+<p>Let:<br>
+- A₁ = Bulb from F1<br>
+- A₂ = Bulb from F2<br>
+- B = Bulb is defective  </p>
+<p>Given:<br>
+[
+P(A₁) = 0.6, \quad P(A₂) = 0.4
+]<br>
+[
+P(B|A₁) = 0.01, \quad P(B|A₂) = 0.02
+]</p>
+<p>We need to find <strong>P(A₁|B)</strong>.</p>
+<hr>
+<h4 id="step-1-find-pb">Step 1: Find P(B)</h4>
+<p>[
+P(B) = P(B|A₁)P(A₁) + P(B|A₂)P(A₂)
+]
+[
+P(B) = (0.01)(0.6) + (0.02)(0.4) = 0.006 + 0.008 = 0.014
+]</p>
+<h4 id="step-2-apply-bayes-theorem">Step 2: Apply Bayes’ Theorem</h4>
+<p>[
+P(A₁|B) = \frac{P(B|A₁) \times P(A₁)}{P(B)}
+]
+[
+P(A₁|B) = \frac{(0.01)(0.6)}{0.014} = \frac{0.006}{0.014} = 0.4286
+]</p>
+<hr>
+<h3 id="6-final-answer"><strong>6. Final Answer</strong></h3>
+<p>The probability that the <strong>defective bulb</strong> came from <strong>Factory F1</strong> is approximately <strong>0.4286 (42.86%)</strong>.</p>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+Bayes’ Theorem helps <strong>update probabilities</strong> based on <strong>new evidence</strong> and is widely used in <strong>spam filtering, medical diagnosis, and classification algorithms</strong>.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q6 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h2 id="k-nearest-neighbor-knn-algorithm">K-Nearest Neighbor (KNN) Algorithm –</h2>
+<p>Definition:
+K-Nearest Neighbor (KNN) is a supervised machine learning algorithm used for both classification and regression problems.
+It predicts the output for a new data point by looking at the ‘K’ nearest data points in the training dataset and choosing the most common class (for classification) or average value (for regression).</p>
+<hr>
+<p>Working of KNN Algorithm:</p>
+<ol>
+<li>Choose the number of neighbors (K):</li>
+</ol>
+<p>Select a suitable value of K (e.g., 3, 5, 7).</p>
+<p>K decides how many nearby points will be considered when making a prediction.</p>
+<ol>
+<li>Calculate the distance:</li>
+</ol>
+<p>Find the distance between the new data point and all other data points in the training set.</p>
+<p>Common distance formulas used are:</p>
+<p>Euclidean Distance</p>
+<p>d = √((x₂ - x₁)² + (y₂ - y₁)²)</p>
+<ol>
+<li>Find the nearest neighbors:</li>
+</ol>
+<p>Sort all distances and select the K smallest distances (the closest points).</p>
+<ol>
+<li>Voting or Averaging:</li>
+</ol>
+<p>For classification: Choose the class that appears most among the K neighbors.</p>
+<p>For regression: Take the average of the K nearest values.</p>
+<ol>
+<li>Predict the result:</li>
+</ol>
+<p>The selected class or averaged value becomes the model’s prediction.</p>
+<hr>
+<p>Example:</p>
+<p>Suppose we want to classify whether a fruit is an apple or orange based on its weight and color.
+If K = 3, and among the 3 nearest neighbors,</p>
+<p>2 are apples and 1 is orange → the new fruit is predicted as apple.</p>
+<hr>
+<p>Advantages:</p>
+<p>Simple and easy to implement.</p>
+<p>No training phase required (lazy learner).</p>
+<p>Works well with small datasets.</p>
+<hr>
+<p>Disadvantages:</p>
+<p>Slow for large datasets because it compares every point.</p>
+<p>Sensitive to noisy data and irrelevant features.</p>
+<p>Requires normalization of data for accurate distance calculation.</p>
+<hr>
+<p>✅ In short:
+KNN is a lazy learning algorithm that classifies or predicts based on similarity (distance) between data points.
+It’s simple and effective for small datasets but less efficient for large or high-dimensional data.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>

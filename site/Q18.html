@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q18 - Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <meta name="description" content="Notes website generated from markdown files" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+  </header>
+  <main class="wrap content">
+    <h3 id="explain-performance-measures-of-machine-learning-8-marks">Explain Performance Measures of Machine Learning (8 Marks)</h3>
+<p><strong>Definition:</strong><br>
+Performance measures in Machine Learning are <strong>evaluation metrics</strong> used to test how well a trained model performs on unseen data.<br>
+They help to <strong>compare different models</strong> and understand how accurate, precise, or reliable a model’s predictions are.</p>
+<hr>
+<h3 id="1-accuracy"><strong>1. Accuracy</strong></h3>
+<ul>
+<li>It is the most common measure of model performance.  </li>
+<li><strong>Definition:</strong> The ratio of correctly predicted observations to the total observations.  </li>
+<li><strong>Formula:</strong></li>
+</ul>
+<p>Accuracy = (TP + TN) / (TP + TN + FP + FN)</p>
+<ul>
+<li><strong>TP:</strong> True Positive, <strong>TN:</strong> True Negative, <strong>FP:</strong> False Positive, <strong>FN:</strong> False Negative  </li>
+<li><strong>Example:</strong> If a model predicts 90 correct results out of 100, accuracy = 90%.</li>
+</ul>
+<hr>
+<h3 id="2-precision"><strong>2. Precision</strong></h3>
+<ul>
+<li>Precision measures how many of the <strong>predicted positives are actually correct</strong>.  </li>
+<li><strong>Formula:</strong></li>
+</ul>
+<p>Precision = TP / (TP + FP)</p>
+<ul>
+<li><strong>Example:</strong> In spam detection, high precision means most emails labeled as spam are really spam.</li>
+</ul>
+<hr>
+<h3 id="3-recall-sensitivity"><strong>3. Recall (Sensitivity)</strong></h3>
+<ul>
+<li>Recall tells how many of the <strong>actual positives were correctly identified</strong> by the model.  </li>
+<li><strong>Formula:</strong></li>
+</ul>
+<p>Recall = TP / (TP + FN)</p>
+<ul>
+<li><strong>Example:</strong> In medical diagnosis, high recall means most sick patients were correctly diagnosed as sick.</li>
+</ul>
+<hr>
+<h3 id="4-f1-score"><strong>4. F1 Score</strong></h3>
+<ul>
+<li>F1 Score is the <strong>harmonic mean of Precision and Recall</strong>, useful when you need a balance between both.  </li>
+<li><strong>Formula:</strong></li>
+</ul>
+<p>F1 Score = 2 * (Precision * Recall) / (Precision + Recall)</p>
+<ul>
+<li><strong>Example:</strong> Used when both false positives and false negatives are important.</li>
+</ul>
+<hr>
+<h3 id="5-confusion-matrix"><strong>5. Confusion Matrix</strong></h3>
+<ul>
+<li>A <strong>table representation</strong> of prediction results that shows how well a classification model performed.  </li>
+<li>It helps visualize <strong>true vs. predicted</strong> classes.</li>
+</ul>
+<p>| Actual \ Predicted | Positive | Negative |
+|--------------------|-----------|-----------|
+| <strong>Positive</strong> | True Positive (TP) | False Negative (FN) |
+| <strong>Negative</strong> | False Positive (FP) | True Negative (TN) |</p>
+<hr>
+<h3 id="6-mean-squared-error-mse"><strong>6. Mean Squared Error (MSE)</strong></h3>
+<ul>
+<li>Commonly used in regression problems.  </li>
+<li><strong>Formula:</strong></li>
+</ul>
+<p>MSE = (1/n) * Σ (Actual - Predicted)²</p>
+<ul>
+<li>Measures the <strong>average squared difference</strong> between actual and predicted values.</li>
+</ul>
+<hr>
+<h3 id="7-r2-score-coefficient-of-determination"><strong>7. R² Score (Coefficient of Determination)</strong></h3>
+<ul>
+<li>Indicates how well data points fit a line or curve.  </li>
+<li><strong>Range:</strong> 0 to 1  </li>
+<li>Closer to 1 means better performance.</li>
+</ul>
+<hr>
+<p>✅ <strong>In short:</strong><br>
+Performance measures help to <strong>evaluate model effectiveness</strong>, <strong>compare algorithms</strong>, and <strong>identify strengths and weaknesses</strong> for both classification and regression problems.</p>
+  </main>
+  <footer class="wrap site-footer">
+    <p>Generated from repository markdown — open source</p>
+  </footer>
+</body>
+</html>
