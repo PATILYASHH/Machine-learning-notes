@@ -1,0 +1,198 @@
+[
+  {
+    "unit": "Unit 1",
+    "marks": "4-marks",
+    "text": "Explain diffrent phases of predictive modeling (8 phases)",
+    "title": "Explain different phases of predictive modeling (8 phases steps)",
+    "slug": "4Q1.html"
+  },
+  {
+    "unit": "Unit 1",
+    "marks": "4-marks",
+    "text": "Advantages and Disadvantages of K-nearest neighbor algorithm",
+    "title": "Q. Advantages and Disadvantages of K-nearest neighbor algorithm",
+    "slug": "4Q2.html"
+  },
+  {
+    "unit": "Unit 1",
+    "marks": "4-marks",
+    "text": "Define Machine Learning and explain features of machine learning",
+    "title": "Machine Learning \u2013 Definition and Features",
+    "slug": "4Q3.html"
+  },
+  {
+    "unit": "Unit 1",
+    "marks": "8-marks",
+    "text": "Explain Diffrence between Artificial Intelligence and Machine learning",
+    "title": "Q4",
+    "slug": "Q4.html"
+  },
+  {
+    "unit": "Unit 1",
+    "marks": "8-marks",
+    "text": "Explain Development steps in Machine Learning",
+    "title": "Q5",
+    "slug": "Q5.html"
+  },
+  {
+    "unit": "Unit 1",
+    "marks": "8-marks",
+    "text": "Explain K-nearest nighbor algorithm in detail",
+    "title": "Q6",
+    "slug": "Q6.html"
+  },
+  {
+    "unit": "Unit 2",
+    "marks": "4-marks",
+    "text": "State the goals of Machine Learning",
+    "title": "Q7",
+    "slug": "Q7.html"
+  },
+  {
+    "unit": "Unit 2",
+    "marks": "4-marks",
+    "text": "Write a note on speech Recognition and production recommendations",
+    "title": "Q8",
+    "slug": "Q8.html"
+  },
+  {
+    "unit": "Unit 2",
+    "marks": "4-marks",
+    "text": "Advantages and Disadvantages of machine learning",
+    "title": "Q9",
+    "slug": "Q9.html"
+  },
+  {
+    "unit": "Unit 2",
+    "marks": "4-marks",
+    "text": "Write a note on function approximation",
+    "title": "Function Approximation (4 Marks)",
+    "slug": "Q10.html"
+  },
+  {
+    "unit": "Unit 2",
+    "marks": "8-marks",
+    "text": "Explain in detail the application of Machine learning",
+    "title": "Q11",
+    "slug": "Q11.html"
+  },
+  {
+    "unit": "Unit 2",
+    "marks": "8-marks",
+    "text": "What is the need for ML? Explain in detail classification of ML",
+    "title": "Q12",
+    "slug": "Q12.html"
+  },
+  {
+    "unit": "Unit 2",
+    "marks": "8-marks",
+    "text": "Explain steps to design a learning system",
+    "title": "Q13",
+    "slug": "Q13.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "Explain bias and variance with example",
+    "title": "Bias and Variance in Machine Learning (4 Marks)",
+    "slug": "Q14.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "Write a short note on confusion matrix",
+    "title": "Q15",
+    "slug": "Q15.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "How to treat data in ML",
+    "title": "Q16",
+    "slug": "Q16.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "What is Data pre-processing? Why do we need it ?",
+    "title": "Q17",
+    "slug": "Q17.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "Explain performance measures of ML",
+    "title": "Q18",
+    "slug": "Q18.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "Write a note on bootstrap sampling",
+    "title": "Q19",
+    "slug": "Q19.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "Difference between bagging and boosting",
+    "title": "Q20",
+    "slug": "Q20.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "4-marks",
+    "text": "Write a note on bagging aggregatiion",
+    "title": "Q21",
+    "slug": "Q21.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "8-marks",
+    "text": "Explain in detail types of ML",
+    "title": "Q22",
+    "slug": "Q22.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "8-marks",
+    "text": "what is bias and variance ? Explain in detail",
+    "title": "Q23",
+    "slug": "Q23.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "8-marks",
+    "text": "What is bias and variance and what is Bias-variance tradeof ?",
+    "title": "Q24",
+    "slug": "Q24.html"
+  },
+  {
+    "unit": "Unit 3",
+    "marks": "8-marks",
+    "text": "Explain overfitting and underfitting in ML",
+    "title": "Q25",
+    "slug": "Q25.html"
+  },
+  {
+    "unit": "Unit 4",
+    "marks": "8-marks",
+    "text": "State and prove baye's theorem with example",
+    "title": "Q26",
+    "slug": "Q26.html"
+  },
+  {
+    "unit": "Unit 4",
+    "marks": "8-marks",
+    "text": "What is probability ? What are the rules of probability",
+    "title": "Q27",
+    "slug": "Q27.html"
+  },
+  {
+    "unit": "Unit 4",
+    "marks": "8-marks",
+    "text": "Difference between permutation and combination",
+    "title": "Q28",
+    "slug": "Q28.html"
+  }
+]

@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Q26 - Notes</title>
+  <title>Q26 - ML Notes</title>
   <link rel="stylesheet" href="static/style.css" />
-  <meta name="description" content="Notes website generated from markdown files" />
+  <meta name="description" content="Machine Learning notes - Q26" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+    <div class="wrap">
+      <h1><a href="index.html">📚 ML Notes</a></h1>
+      <button id="bookmarkBtn" class="bookmark-btn-page" title="Bookmark this question">
+        <span class="bookmark-icon">☆</span>
+      </button>
+    </div>
   </header>
   <main class="wrap content">
+    <div class="back-link">
+      <a href="index.html">← Back to all questions</a>
+    </div>
     <h3 id="bayes-theorem-statement-proof-and-example-8-marks"><strong>Bayes’ Theorem – Statement, Proof, and Example (8 Marks)</strong></h3>
 <hr>
 <h3 id="1-definition"><strong>1. Definition</strong></h3>
@@ -97,7 +105,8 @@ P(A₁|B) = \frac{(0.01)(0.6)}{0.014} = \frac{0.006}{0.014} = 0.4286
 Bayes’ Theorem helps <strong>update probabilities</strong> based on <strong>new evidence</strong> and is widely used in <strong>spam filtering, medical diagnosis, and classification algorithms</strong>.</p>
   </main>
   <footer class="wrap site-footer">
-    <p>Generated from repository markdown — open source</p>
+    <p>Machine Learning Notes - <a href="index.html">View all questions</a></p>
   </footer>
+  <script src="static/question.js"></script>
 </body>
 </html>

@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Q6 - Notes</title>
+  <title>Q6 - ML Notes</title>
   <link rel="stylesheet" href="static/style.css" />
-  <meta name="description" content="Notes website generated from markdown files" />
+  <meta name="description" content="Machine Learning notes - Q6" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+    <div class="wrap">
+      <h1><a href="index.html">📚 ML Notes</a></h1>
+      <button id="bookmarkBtn" class="bookmark-btn-page" title="Bookmark this question">
+        <span class="bookmark-icon">☆</span>
+      </button>
+    </div>
   </header>
   <main class="wrap content">
+    <div class="back-link">
+      <a href="index.html">← Back to all questions</a>
+    </div>
     <h2 id="k-nearest-neighbor-knn-algorithm">K-Nearest Neighbor (KNN) Algorithm –</h2>
 <p>Definition:
 K-Nearest Neighbor (KNN) is a supervised machine learning algorithm used for both classification and regression problems.
@@ -64,7 +72,8 @@ KNN is a lazy learning algorithm that classifies or predicts based on similarity
 It’s simple and effective for small datasets but less efficient for large or high-dimensional data.</p>
   </main>
   <footer class="wrap site-footer">
-    <p>Generated from repository markdown — open source</p>
+    <p>Machine Learning Notes - <a href="index.html">View all questions</a></p>
   </footer>
+  <script src="static/question.js"></script>
 </body>
 </html>

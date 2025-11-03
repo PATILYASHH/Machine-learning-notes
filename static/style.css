@@ -1,13 +1,543 @@
-:root{--bg:#0f1724;--card:#0b1220;--text:#e6eef8;--muted:#9fb0c9;--accent:#7dd3fc}
-*{box-sizing:border-box}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.6;color:var(--text);background:linear-gradient(180deg,#071127 0%, #081426 100%);padding:0;margin:0}
-.wrap{max-width:900px;margin:0 auto;padding:28px}
-.site-header{border-bottom:1px solid rgba(255,255,255,0.03);padding:12px 0}
-.site-header h1{margin:0;font-size:1.2rem}
-.site-header a{color:var(--text);text-decoration:none}
-.content h1,.content h2,.content h3{color:var(--text)}
-.content a{color:var(--accent)}
-.content pre{background:#020617;padding:12px;border-radius:6px;overflow:auto;color:#dbeafe}
-.content code{background:rgba(255,255,255,0.03);padding:2px 6px;border-radius:4px}
-ul{padding-left:1rem}
-.site-footer{border-top:1px solid rgba(255,255,255,0.03);font-size:0.9rem;color:var(--muted);padding:18px 0;margin-top:40px}
+:root {
+  --bg: #0f1724;
+  --card: #1a2332;
+  --card-hover: #212d3f;
+  --text: #e6eef8;
+  --muted: #9fb0c9;
+  --accent: #7dd3fc;
+  --accent-dark: #0ea5e9;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --bookmark: #fbbf24;
+  --success: #34d399;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(180deg, #071127 0%, #0a1628 100%);
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.site-header {
+  background: rgba(10, 22, 40, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.site-header a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-header a:hover {
+  color: var(--accent);
+}
+
+/* Bookmarks Button in Header */
+.bookmarks-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.bookmarks-btn:hover {
+  background: var(--card-hover);
+  border-color: var(--bookmark);
+}
+
+.bookmark-icon {
+  font-size: 1.2rem;
+}
+
+.bookmark-count {
+  background: var(--accent-dark);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Search Container */
+.search-container {
+  margin: 30px 0;
+  background: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1rem;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  transition: all 0.3s;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.1);
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  background: var(--card-hover);
+  color: var(--text);
+}
+
+.filter-tab.active {
+  background: var(--accent-dark);
+  color: white;
+  border-color: var(--accent-dark);
+}
+
+/* Bookmarks Panel */
+.bookmarks-panel {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.bookmarks-panel.hidden {
+  display: none;
+}
+
+.bookmarks-panel h2 {
+  margin-top: 0;
+  color: var(--bookmark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bookmarks-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.empty-state {
+  color: var(--muted);
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Questions Container */
+.questions-container {
+  margin-top: 20px;
+}
+
+.unit-section {
+  margin-bottom: 40px;
+}
+
+.unit-header {
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.marks-group {
+  margin-bottom: 24px;
+}
+
+.marks-label {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.marks-label::before {
+  content: '📝';
+  font-size: 1.1rem;
+}
+
+/* Question Card */
+.question-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question-card:hover {
+  background: var(--card-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--shadow);
+}
+
+.question-card.bookmarked {
+  border-left: 4px solid var(--bookmark);
+  background: linear-gradient(to right, rgba(251, 191, 36, 0.1), var(--card));
+}
+
+.question-text {
+  flex: 1;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.bookmark-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.bookmark-btn:hover {
+  transform: scale(1.2);
+  color: var(--bookmark);
+}
+
+.bookmark-btn.bookmarked {
+  color: var(--bookmark);
+}
+
+/* Question Page Styles */
+.content {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-top: 20px;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.back-link {
+  margin-bottom: 20px;
+}
+
+.back-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.back-link a:hover {
+  gap: 8px;
+  color: var(--accent-dark);
+}
+
+.bookmark-btn-page {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.bookmark-btn-page:hover {
+  background: var(--card-hover);
+  transform: scale(1.1);
+}
+
+.bookmark-btn-page.bookmarked {
+  color: var(--bookmark);
+  border-color: var(--bookmark);
+}
+
+.content h1,
+.content h2,
+.content h3 {
+  color: var(--text);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.content h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.content a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.content pre {
+  background: #020617;
+  padding: 16px;
+  border-radius: 8px;
+  overflow: auto;
+  color: #dbeafe;
+  border: 1px solid var(--border);
+}
+
+.content code {
+  background: rgba(125, 211, 252, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.content ul,
+.content ol {
+  padding-left: 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.5em;
+}
+
+.content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+.content blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 16px;
+  margin-left: 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 24px 0;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 15px;
+  }
+
+  .site-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .bookmarks-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .search-container {
+    padding: 16px;
+  }
+
+  .search-input {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+
+  .filter-tabs {
+    gap: 8px;
+  }
+
+  .filter-tab {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .unit-header {
+    font-size: 1.1rem;
+    padding: 12px 16px;
+  }
+
+  .question-card {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .question-text {
+    font-size: 0.95rem;
+  }
+
+  .bookmark-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .content h2 {
+    font-size: 1.25rem;
+  }
+
+  .bookmarks-panel {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .wrap {
+    padding: 0 15px;
+  }
+
+  .site-header h1 {
+    font-size: 1rem;
+  }
+
+  .filter-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .filter-tab {
+    flex-shrink: 0;
+  }
+
+  .content {
+    padding: 15px;
+  }
+}

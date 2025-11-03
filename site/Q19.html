@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Q19 - Notes</title>
+  <title>Q19 - ML Notes</title>
   <link rel="stylesheet" href="static/style.css" />
-  <meta name="description" content="Notes website generated from markdown files" />
+  <meta name="description" content="Machine Learning notes - Q19" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+    <div class="wrap">
+      <h1><a href="index.html">📚 ML Notes</a></h1>
+      <button id="bookmarkBtn" class="bookmark-btn-page" title="Bookmark this question">
+        <span class="bookmark-icon">☆</span>
+      </button>
+    </div>
   </header>
   <main class="wrap content">
+    <div class="back-link">
+      <a href="index.html">← Back to all questions</a>
+    </div>
     <h3 id="write-a-note-on-bootstrap-sampling-4-marks">Write a Note on Bootstrap Sampling (4 Marks)</h3>
 <p><strong>Definition:</strong><br>
 Bootstrap Sampling is a <strong>statistical method</strong> used in Machine Learning to <strong>estimate the accuracy and stability</strong> of a model.<br>
@@ -51,7 +59,8 @@ a bootstrap sample could be <code>[2, 4, 4, 1, 5]</code> — notice that some el
 Bootstrap Sampling is a <strong>resampling technique</strong> that helps <strong>estimate accuracy and variability</strong> by training models on multiple random subsets of data.</p>
   </main>
   <footer class="wrap site-footer">
-    <p>Generated from repository markdown — open source</p>
+    <p>Machine Learning Notes - <a href="index.html">View all questions</a></p>
   </footer>
+  <script src="static/question.js"></script>
 </body>
 </html>

@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Q16 - Notes</title>
+  <title>Q16 - ML Notes</title>
   <link rel="stylesheet" href="static/style.css" />
-  <meta name="description" content="Notes website generated from markdown files" />
+  <meta name="description" content="Machine Learning notes - Q16" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+    <div class="wrap">
+      <h1><a href="index.html">📚 ML Notes</a></h1>
+      <button id="bookmarkBtn" class="bookmark-btn-page" title="Bookmark this question">
+        <span class="bookmark-icon">☆</span>
+      </button>
+    </div>
   </header>
   <main class="wrap content">
+    <div class="back-link">
+      <a href="index.html">← Back to all questions</a>
+    </div>
     <h3 id="how-to-treat-data-in-machine-learning-4-marks">How to Treat Data in Machine Learning (4 Marks)</h3>
 <p><strong>Definition:</strong><br>
 Treating data in Machine Learning means <strong>preparing and cleaning raw data</strong> before using it to train a model.<br>
@@ -48,7 +56,8 @@ Good data treatment ensures that the ML algorithm can <strong>learn patterns acc
 Treating data in ML means performing <strong>cleaning, integration, transformation, reduction, and splitting</strong> — ensuring the dataset is <strong>accurate, consistent, and ready</strong> for model training.</p>
   </main>
   <footer class="wrap site-footer">
-    <p>Generated from repository markdown — open source</p>
+    <p>Machine Learning Notes - <a href="index.html">View all questions</a></p>
   </footer>
+  <script src="static/question.js"></script>
 </body>
 </html>

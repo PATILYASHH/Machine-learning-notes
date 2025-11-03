@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Q23 - Notes</title>
+  <title>Q23 - ML Notes</title>
   <link rel="stylesheet" href="static/style.css" />
-  <meta name="description" content="Notes website generated from markdown files" />
+  <meta name="description" content="Machine Learning notes - Q23" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap"><h1><a href="index.html">Notes</a></h1></div>
+    <div class="wrap">
+      <h1><a href="index.html">📚 ML Notes</a></h1>
+      <button id="bookmarkBtn" class="bookmark-btn-page" title="Bookmark this question">
+        <span class="bookmark-icon">☆</span>
+      </button>
+    </div>
   </header>
   <main class="wrap content">
+    <div class="back-link">
+      <a href="index.html">← Back to all questions</a>
+    </div>
     <h3 id="bias-and-variance-detailed-explanation-8-marks">Bias and Variance — Detailed Explanation (8 Marks)</h3>
 <p><strong>Definition (short):</strong><br>
 - <strong>Bias</strong> is the error from <strong>wrong assumptions</strong> in the learning algorithm. High bias means the model is too simple and cannot capture the true pattern (underfitting).<br>
@@ -85,7 +93,8 @@ Balance them to minimize total prediction error.</li>
 </ul>
   </main>
   <footer class="wrap site-footer">
-    <p>Generated from repository markdown — open source</p>
+    <p>Machine Learning Notes - <a href="index.html">View all questions</a></p>
   </footer>
+  <script src="static/question.js"></script>
 </body>
 </html>
