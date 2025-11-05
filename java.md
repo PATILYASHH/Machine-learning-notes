@@ -1,5 +1,1 @@
-# Java Questions
-
-This file is a placeholder for Java programming questions.
-
-Questions will be added manually.
+Q. Write a short note on features of Java [Click here](j1.md)

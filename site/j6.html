@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Java Question 6 - Machine Learning Notes</title>
+  <title>Describe break and continue statements in Java - Machine Learning Notes</title>
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
@@ -33,9 +33,31 @@
   </div>
   
   <main class="wrap content">
-    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="java-question-6">Java Question 6</h1>
-<p>This is a placeholder for Java question 6.</p>
-<p>Content will be added manually.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j6.html" data-title="Java Question 6" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h3 id="q-describe-break-and-continue-statements-in-java-4-marks">Q. Describe break and continue statements in Java. (4 Marks)</h3>
+<p><code>break</code> and <code>continue</code> are control flow statements used in loops and switch statements to control program execution.</p>
+<h4 id="break-statement">break Statement</h4>
+<ul>
+<li>Stops the loop or switch immediately.</li>
+<li>Control jumps to the next statement after the loop/switch.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Output: 1 2</span>
+</code></pre></div>
+
+<p>continue Statement</p>
+<p>Skips the current iteration of the loop.</p>
+<p>Control jumps to the next iteration without stopping the loop.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Output: 1 2 4 5</span>
+</code></pre></div></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j6.html" data-title="Describe break and continue statements in Java" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
   </main>
   
   <footer class="wrap site-footer">

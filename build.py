@@ -63,19 +63,19 @@ QUESTION_MAP = {
     'Q28.md': ('Difference between permutation and combination', 'Unit 4', '4 marks', 'ML'),
     
     # Java - Unit 1
-    'j1.md': ('Java Question 1', 'Unit 1', '', 'JAVA'),
-    'j2.md': ('Java Question 2', 'Unit 1', '', 'JAVA'),
-    'j3.md': ('Java Question 3', 'Unit 1', '', 'JAVA'),
-    'j4.md': ('Java Question 4', 'Unit 1', '', 'JAVA'),
-    'j5.md': ('Java Question 5', 'Unit 1', '', 'JAVA'),
-    'j6.md': ('Java Question 6', 'Unit 1', '', 'JAVA'),
-    'j7.md': ('Java Question 7', 'Unit 1', '', 'JAVA'),
-    'j8.md': ('Java Question 8', 'Unit 1', '', 'JAVA'),
-    'j9.md': ('Java Question 9', 'Unit 1', '', 'JAVA'),
-    'j10.md': ('Java Question 10', 'Unit 1', '', 'JAVA'),
+    'j1.md': ('Write a short note on Features of Java', 'Unit 1', '4 marks', 'JAVA'),
+    'j2.md': ('Write a short note on JVM', 'Unit 1', '4 marks', 'JAVA'),
+    'j3.md': ('Describe primitive data types in Java', 'Unit 1', '4 marks', 'JAVA'),
+    'j4.md': ('Write a short note on Type Casting in Java', 'Unit 1', '4 marks', 'JAVA'),
+    'j5.md': ('Explain compilation and execution process of a Java program', 'Unit 1', '4 marks', 'JAVA'),
+    'j6.md': ('Describe break and continue statements in Java', 'Unit 1', '4 marks', 'JAVA'),
+    'j7.md': ('Explain any four operators in Java with example', 'Unit 1', '8 marks', 'JAVA'),
+    'j8.md': ('Explain looping statements in Java with example', 'Unit 1', '8 marks', 'JAVA'),
+    'j9.md': ('Explain branching statements in Java with example', 'Unit 1', '8 marks', 'JAVA'),
+    'j10.md': ('What is type casting? Explain implicit and explicit type casting with example', 'Unit 1', '8 marks', 'JAVA'),
     
     # Java
-    'java.md': ('Java Questions', 'General', '', 'JAVA'),
+    'java.md': ('Write a short note on features of Java', 'General', '', 'JAVA'),
     
     # C#
     'csharp.md': ('C# Questions', 'General', '', 'C#'),

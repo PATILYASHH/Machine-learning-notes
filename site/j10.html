@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Java Question 10 - Machine Learning Notes</title>
+  <title>What is type casting? Explain implicit and explicit type casting with example - Machine Learning Notes</title>
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
@@ -33,9 +33,32 @@
   </div>
   
   <main class="wrap content">
-    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="java-question-10">Java Question 10</h1>
-<p>This is a placeholder for Java question 10.</p>
-<p>Content will be added manually.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j10.html" data-title="Java Question 10" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h3 id="q-what-is-type-casting-explain-implicit-and-explicit-type-casting-with-example-8-marks">Q. What is type casting? Explain implicit and explicit type casting with example. (8 Marks)</h3>
+<p>Type casting in Java is the process of converting one data type into another. It is used when we need to store a value of one type into a different type variable.</p>
+<hr>
+<h4 id="implicit-type-casting-widening">✅ Implicit Type Casting (Widening)</h4>
+<ul>
+<li>Done automatically by the compiler.</li>
+<li>Converts <strong>smaller data type → larger data type</strong>.</li>
+<li>No data loss occurs.</li>
+</ul>
+<p><strong>Order:</strong> byte → short → int → long → float → double</p>
+<p><strong>Example:</strong>
+```java
+int a = 10;
+double b = a; // implicit casting
+System.out.println(b); // Output: 10.0</p>
+<hr>
+<p>✅ Explicit Type Casting (Narrowing)</p>
+<p>Done manually by the programmer.</p>
+<p>Converts larger data type → smaller data type.</p>
+<p>May cause data loss.</p>
+<p>Example:</p>
+<p>double x = 10.75;
+int y = (int) x; // explicit casting
+System.out.println(y); // Output: 10</p>
+<hr>
+<p>Type casting allows smooth data conversion in Java, making it easier to perform calculations and assign values between different data types.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j10.html" data-title="What is type casting? Explain implicit and explicit type casting with example" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
   </main>
   
   <footer class="wrap site-footer">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Java Question 9 - Machine Learning Notes</title>
+  <title>Explain branching statements in Java with example - Machine Learning Notes</title>
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
@@ -33,9 +33,49 @@
   </div>
   
   <main class="wrap content">
-    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="java-question-9">Java Question 9</h1>
-<p>This is a placeholder for Java question 9.</p>
-<p>Content will be added manually.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j9.html" data-title="Java Question 9" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h3 id="q-explain-branching-statements-in-java-with-example-8-marks">Q. Explain branching statements in Java with example. (8 Marks)</h3>
+<p>Branching statements in Java are used to <strong>change the normal flow of execution</strong> based on certain conditions. These statements allow the program to make decisions and jump to different parts of the code.</p>
+<p>Java provides the following branching statements:</p>
+<hr>
+<h4 id="1-ifelse-statement">1. <strong>if–else Statement</strong></h4>
+<p>Used to execute block of code based on a condition.</p>
+<p><strong>Example:</strong>
+```java
+int age = 18;
+if(age &gt;= 18) {
+    System.out.println("Eligible to vote");
+} else {
+    System.out.println("Not eligible");
+}
+// Output: Eligible to vote</p>
+<hr>
+<ol>
+<li>Nested if Statement</li>
+</ol>
+<p>An if statement inside another if statement.</p>
+<p>Example:</p>
+<p>int marks = 85;
+if(marks &gt;= 60) {
+    if(marks &gt;= 80) {
+        System.out.println("Distinction");
+    }
+}
+// Output: Distinction</p>
+<hr>
+<ol>
+<li>switch Statement</li>
+</ol>
+<p>Used when multiple conditions need to be checked for the same variable.</p>
+<p>Example:</p>
+<p>int day = 2;
+switch(day) {
+    case 1: System.out.println("Monday"); break;
+    case 2: System.out.println("Tuesday"); break;
+    default: System.out.println("Other Day");
+}
+// Output: Tuesday</p>
+<hr>
+<p>Branching statements help Java programs make decisions and execute different code paths based on conditions.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j9.html" data-title="Explain branching statements in Java with example" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
   </main>
   
   <footer class="wrap site-footer">

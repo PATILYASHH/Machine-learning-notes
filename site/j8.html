@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Java Question 8 - Machine Learning Notes</title>
+  <title>Explain looping statements in Java with example - Machine Learning Notes</title>
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
@@ -33,9 +33,56 @@
   </div>
   
   <main class="wrap content">
-    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="java-question-8">Java Question 8</h1>
-<p>This is a placeholder for Java question 8.</p>
-<p>Content will be added manually.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j8.html" data-title="Java Question 8" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h3 id="q-explain-looping-statements-in-java-with-example-8-marks">Q. Explain looping statements in Java with example. (8 Marks)</h3>
+<p>Looping statements in Java are used to execute a block of code repeatedly until a specific condition is met. They help reduce code repetition and improve efficiency.</p>
+<p>Java provides three main looping statements:</p>
+<hr>
+<h4 id="1-for-loop">1. <strong>for Loop</strong></h4>
+<p>Used when the number of iterations is known.</p>
+<p><strong>Syntax:</strong>
+```java
+for(initialization; condition; increment/decrement) {
+    // code to execute
+}</p>
+<p>Example:</p>
+<p>for(int i = 1; i &lt;= 5; i++) {
+    System.out.println(i);
+}
+// Output: 1 2 3 4 5</p>
+<hr>
+<ol>
+<li>while Loop</li>
+</ol>
+<p>Used when the number of iterations is unknown and depends on a condition.</p>
+<p>Syntax:</p>
+<p>while(condition) {
+    // code to execute
+}</p>
+<p>Example:</p>
+<p>int i = 1;
+while(i &lt;= 5) {
+    System.out.println(i);
+    i++;
+}
+// Output: 1 2 3 4 5</p>
+<hr>
+<ol>
+<li>do-while Loop</li>
+</ol>
+<p>Executes the block at least once, even if the condition is false.</p>
+<p>Syntax:</p>
+<p>do {
+    // code to execute
+} while(condition);</p>
+<p>Example:</p>
+<p>int i = 1;
+do {
+    System.out.println(i);
+    i++;
+} while(i &lt;= 5);
+// Output: 1 2 3 4 5</p>
+<hr>
+<p>Looping statements make programs more efficient by avoiding repetitive code and executing instructions multiple times based on conditions.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="j8.html" data-title="Explain looping statements in Java with example" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
   </main>
   
   <footer class="wrap site-footer">
