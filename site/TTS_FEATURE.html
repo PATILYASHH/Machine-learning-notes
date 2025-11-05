@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Text-to-Speech (Read Aloud) Feature - Machine Learning Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
+  <meta name="theme-color" content="#0f1724" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-content">
+        <h1><a href="index.html"><i class="fas fa-brain"></i> ML Notes</a></h1>
+        <button class="bookmark-toggle" id="bookmarkToggle" title="View Bookmarks">
+          <i class="fas fa-bookmark"></i>
+          <span class="bookmark-count" id="bookmarkCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="bookmark-panel" id="bookmarkPanel">
+    <div class="bookmark-panel-header">
+      <h2><i class="fas fa-bookmark"></i> Bookmarks</h2>
+      <button class="close-panel" id="closePanel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="bookmark-list" id="bookmarkList">
+      <p class="empty-bookmarks">No bookmarks yet. Click the bookmark icon on any question to save it.</p>
+    </div>
+  </div>
+  
+  <main class="wrap content">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Questions</a><button class="tts-btn" id="ttsBtn" title="Read aloud"><i class="fas fa-volume-up"></i> <span>Read Aloud</span></button><div id="answerContent" class="answer-content"><h1 id="text-to-speech-read-aloud-feature">Text-to-Speech (Read Aloud) Feature</h1>
+<h2 id="overview">Overview</h2>
+<p>The Machine Learning Notes website now includes a "Read Aloud" feature that allows users to listen to question answers being read aloud using text-to-speech technology.</p>
+<h2 id="how-to-use">How to Use</h2>
+<h3 id="on-question-pages">On Question Pages</h3>
+<ol>
+<li>Navigate to any question page (e.g., Q5.html, Q4.html, etc.)</li>
+<li>Look for the bright <strong>"Read Aloud"</strong> button next to the "Back to Questions" button</li>
+<li>Click the button to start listening to the answer</li>
+</ol>
+<h3 id="playback-controls">Playback Controls</h3>
+<ul>
+<li><strong>Read Aloud</strong> (Initial state) - Click to start reading</li>
+<li><strong>Pause</strong> (While playing) - Click to pause the speech</li>
+<li><strong>Resume</strong> (While paused) - Click to continue from where you paused</li>
+</ul>
+<h3 id="visual-feedback">Visual Feedback</h3>
+<ul>
+<li><strong>Default State</strong>: Blue button with volume icon</li>
+<li><strong>Playing</strong>: Orange/amber button with pulsing animation</li>
+<li><strong>Paused</strong>: Dark button with play icon</li>
+</ul>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="browser-support">Browser Support</h3>
+<p>The feature works in modern browsers that support the Web Speech API:
+- ✅ Google Chrome
+- ✅ Microsoft Edge
+- ✅ Safari
+- ✅ Opera
+- ⚠️ Firefox (limited support)</p>
+<p>If your browser doesn't support text-to-speech, the button will be hidden automatically.</p>
+<h3 id="what-gets-read">What Gets Read</h3>
+<p>The feature intelligently extracts text from the answer content:
+- ✅ Regular text and paragraphs
+- ✅ Headings and subheadings
+- ✅ List items
+- ✅ Table content
+- ❌ Code blocks (skipped)
+- ❌ Script/style content (skipped)</p>
+<h3 id="speech-settings">Speech Settings</h3>
+<ul>
+<li><strong>Speed</strong>: Normal (1.0x)</li>
+<li><strong>Pitch</strong>: Normal (1.0)</li>
+<li><strong>Volume</strong>: Full (1.0)</li>
+</ul>
+<h2 id="accessibility-benefits">Accessibility Benefits</h2>
+<ul>
+<li>📚 Helps auditory learners</li>
+<li>👁️ Reduces eye strain</li>
+<li>🎯 Enables multitasking while studying</li>
+<li>♿ Improves accessibility for visually impaired users</li>
+</ul>
+<h2 id="for-developers">For Developers</h2>
+<h3 id="files-modified">Files Modified</h3>
+<ul>
+<li><code>build.py</code> - Adds TTS button to generated pages</li>
+<li><code>static/script.js</code> - TextToSpeech class implementation</li>
+<li><code>static/style.css</code> - Button styling and animations</li>
+</ul>
+<h3 id="api-used">API Used</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis">Web Speech API - SpeechSynthesis</a></li>
+</ul>
+<h3 id="customization">Customization</h3>
+<p>You can customize the speech parameters by modifying the <code>startSpeech()</code> method in <code>static/script.js</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">utterance</span><span class="p">.</span><span class="nx">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Speech speed (0.1 to 10)</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">utterance</span><span class="p">.</span><span class="nx">pitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Voice pitch (0 to 2)</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">utterance</span><span class="p">.</span><span class="nx">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Volume (0 to 1)</span>
+</code></pre></div>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="button-doesnt-appear">Button doesn't appear</h3>
+<ul>
+<li>Check if your browser supports the Web Speech API</li>
+<li>Try using a different browser (Chrome recommended)</li>
+</ul>
+<h3 id="no-sound-plays">No sound plays</h3>
+<ul>
+<li>Check your device volume</li>
+<li>Ensure your browser has permission to play audio</li>
+<li>Try refreshing the page</li>
+</ul>
+<h3 id="speech-is-too-fastslow">Speech is too fast/slow</h3>
+<ul>
+<li>Developers can adjust the <code>rate</code> parameter in the code</li>
+<li>Some browsers allow users to control speech rate in settings</li>
+</ul>
+<h2 id="future-enhancements">Future Enhancements</h2>
+<p>Possible improvements for future versions:
+- Voice selection (male/female, different accents)
+- Speed control slider
+- Progress indicator showing current reading position
+- Highlighting text as it's being read
+- Save playback position</p>
+<hr>
+<p>For issues or feature requests, please open an issue on the GitHub repository.</p></div><button class="page-bookmark-btn" id="pageBookmarkBtn" data-slug="TTS_FEATURE.html" data-title="Text-to-Speech (Read Aloud) Feature" title="Bookmark this question"><i class="far fa-bookmark"></i></button>
+  </main>
+  
+  <footer class="wrap site-footer">
+    <p>Machine Learning Notes • Study Material</p>
+  </footer>
+  
+  <script src="static/script.js"></script>
+</body>
+</html>

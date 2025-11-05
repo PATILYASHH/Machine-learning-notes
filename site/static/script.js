@@ -369,6 +369,132 @@ class TextToSpeech {
   }
 }
 
+// Swipe Navigation System
+class SwipeNavigation {
+  constructor() {
+    this.touchStartX = 0;
+    this.touchEndX = 0;
+    this.touchStartY = 0;
+    this.touchEndY = 0;
+    this.minSwipeDistance = 50; // minimum distance for a swipe to be recognized
+    this.maxVerticalMovement = 100; // maximum vertical movement to still be considered horizontal swipe
+    
+    // Question order mapping
+    this.questionOrder = [
+      '4Q1.html', '4Q2.html', '4Q3.html',
+      'Q4.html', 'Q5.html', 'Q6.html', 'Q7.html', 'Q8.html', 'Q9.html',
+      'Q10.html', 'Q11.html', 'Q12.html', 'Q13.html', 'Q14.html', 'Q15.html',
+      'Q16.html', 'Q17.html', 'Q18.html', 'Q19.html', 'Q20.html', 'Q21.html',
+      'Q22.html', 'Q23.html', 'Q24.html', 'Q25.html', 'Q26.html', 'Q27.html', 'Q28.html'
+    ];
+    
+    this.init();
+  }
+
+  init() {
+    // Only initialize on question pages
+    if (!document.getElementById('answerContent')) return;
+    
+    // Get current page filename
+    this.currentPage = window.location.pathname.split('/').pop();
+    
+    // Add touch event listeners for mobile
+    document.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+    document.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
+    
+    // Add mouse event listeners for desktop testing
+    let isMouseDown = false;
+    document.addEventListener('mousedown', (e) => {
+      // Only handle left mouse button
+      if (e.button !== 0) return;
+      
+      isMouseDown = true;
+      this.touchStartX = e.screenX;
+      this.touchStartY = e.screenY;
+    }, { passive: true });
+    
+    document.addEventListener('mouseup', (e) => {
+      if (isMouseDown) {
+        this.touchEndX = e.screenX;
+        this.touchEndY = e.screenY;
+        this.handleSwipe();
+        isMouseDown = false;
+      }
+    }, { passive: true });
+    
+    // Add visual indicator
+    this.addSwipeIndicator();
+  }
+
+  handleTouchStart(e) {
+    this.touchStartX = e.changedTouches[0].screenX;
+    this.touchStartY = e.changedTouches[0].screenY;
+  }
+
+  handleTouchEnd(e) {
+    this.touchEndX = e.changedTouches[0].screenX;
+    this.touchEndY = e.changedTouches[0].screenY;
+    this.handleSwipe();
+  }
+
+  handleSwipe() {
+    const horizontalDistance = this.touchEndX - this.touchStartX;
+    const verticalDistance = Math.abs(this.touchEndY - this.touchStartY);
+    
+    // Check if this is a valid horizontal swipe
+    if (Math.abs(horizontalDistance) < this.minSwipeDistance) return;
+    if (verticalDistance > this.maxVerticalMovement) return;
+    
+    // Get current question index
+    const currentIndex = this.questionOrder.indexOf(this.currentPage);
+    if (currentIndex === -1) return;
+    
+    let targetIndex;
+    
+    if (horizontalDistance > 0) {
+      // Swiped right - go to previous question
+      targetIndex = currentIndex - 1;
+      this.showSwipeIndicator('left');
+    } else {
+      // Swiped left - go to next question
+      targetIndex = currentIndex + 1;
+      this.showSwipeIndicator('right');
+    }
+    
+    // Navigate if valid target
+    if (targetIndex >= 0 && targetIndex < this.questionOrder.length) {
+      const targetPage = this.questionOrder[targetIndex];
+      setTimeout(() => {
+        window.location.href = targetPage;
+      }, 200);
+    }
+  }
+
+  addSwipeIndicator() {
+    const indicator = document.createElement('div');
+    indicator.id = 'swipeIndicator';
+    indicator.className = 'swipe-indicator';
+    indicator.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    document.body.appendChild(indicator);
+  }
+
+  showSwipeIndicator(direction) {
+    const indicator = document.getElementById('swipeIndicator');
+    if (!indicator) return;
+    
+    indicator.className = 'swipe-indicator';
+    indicator.innerHTML = direction === 'left' 
+      ? '<i class="fas fa-chevron-left"></i>'
+      : '<i class="fas fa-chevron-right"></i>';
+    
+    indicator.classList.add('active', direction);
+    
+    setTimeout(() => {
+      indicator.classList.remove('active', 'left', 'right');
+    }, 300);
+  }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize bookmark manager
@@ -382,6 +508,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize text-to-speech (only on question pages)
   if (document.getElementById('answerContent')) {
     const tts = new TextToSpeech();
+  }
+
+  // Initialize swipe navigation (only on question pages)
+  if (document.getElementById('answerContent')) {
+    const swipeNav = new SwipeNavigation();
   }
 
   // Add smooth scroll behavior

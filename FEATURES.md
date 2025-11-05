@@ -69,16 +69,40 @@ The website automatically adapts to:
 - Hover for visual feedback
 - Bookmark without navigating away
 
-### 7. 📄 Question Pages
+### 7. 👆 Swipe Navigation (NEW!)
+**How it works:**
+- **Swipe left** or **drag left with mouse**: Navigate to next question
+- **Swipe right** or **drag right with mouse**: Navigate to previous question
+- Visual indicator shows swipe direction
+- Works on both mobile and desktop
+
+**Navigation Order:**
+4Q1 → 4Q2 → 4Q3 → Q4 → Q5 → Q6 → ... → Q28
+
+**Features:**
+- Minimum swipe distance prevents accidental triggers
+- Distinguishes between swipe and scroll (vertical movement ignored)
+- Respects question boundaries (won't navigate past first/last)
+- Smooth visual feedback with animated indicator
+- Only left mouse button triggers navigation
+
+**Usage Tips:**
+- On mobile: Use natural swipe gestures
+- On desktop: Click and drag horizontally
+- Quick way to review multiple questions in sequence
+- Works great for sequential studying
+
+### 8. 📄 Question Pages
 **Features:**
 - Clean, readable content layout
 - Formatted tables and code blocks
 - "Back to Questions" button
 - Floating bookmark button
+- Swipe navigation for quick browsing
 - Proper heading hierarchy
 - Syntax highlighting for code
 
-### 8. 💾 Data Persistence
+### 9. 💾 Data Persistence
 **What's saved:**
 - Bookmarked questions
 - Bookmark timestamps
