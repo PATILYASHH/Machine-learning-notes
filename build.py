@@ -149,98 +149,175 @@ def build():
 
 
 def generate_index(pages):
-    """Generate a modern index page with search, filter, and question cards"""
+    """Generate a landing page with subject selection cards"""
     
-    # Group questions by unit and subject
-    units = {}
-    subjects = set()
+    # Count questions by subject
+    subject_counts = {}
     for page in pages:
-        unit = page['unit']
         subject = page['subject']
-        subjects.add(subject)
-        if unit not in units:
-            units[unit] = []
-        units[unit].append(page)
+        if subject not in subject_counts:
+            subject_counts[subject] = 0
+        subject_counts[subject] += 1
     
-    # Create subject filter tabs (ML, JAVA, C#)
-    subject_tabs = ''.join([
-        f'<button class="filter-tab" data-filter="{subject}"><i class="fas fa-code"></i> {subject}</button>'
-        for subject in sorted(subjects)
-    ])
+    # Define the three main subjects with icons and descriptions
+    main_subjects = [
+        {
+            'name': 'ML',
+            'full_name': 'Machine Learning',
+            'icon': 'fa-brain',
+            'description': 'Comprehensive ML study material covering all units',
+            'color': '#7dd3fc',
+            'count': subject_counts.get('ML', 0)
+        },
+        {
+            'name': 'JAVA',
+            'full_name': 'Java Programming',
+            'icon': 'fa-coffee',
+            'description': 'Java programming questions and concepts',
+            'color': '#f59e0b',
+            'count': subject_counts.get('JAVA', 0)
+        },
+        {
+            'name': 'C#',
+            'full_name': 'C# Programming',
+            'icon': 'fa-code',
+            'description': 'C# programming questions and concepts',
+            'color': '#10b981',
+            'count': subject_counts.get('C#', 0)
+        }
+    ]
     
-    # Create search and filter UI
-    search_html = f'''
-    <div class="search-container">
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search questions...">
-    </div>
-    
-    <div class="filter-section">
-        <div class="filter-label">Filter by Subject:</div>
-        <div class="filter-tabs subject-tabs">
-            <button class="filter-tab active" data-filter="all">All Subjects</button>
-            {subject_tabs}
-        </div>
-    </div>
-    
-    <div class="filter-section">
-        <div class="filter-label">Filter by Unit:</div>
-        <div class="filter-tabs unit-tabs">
-            <button class="filter-tab active" data-filter="all-units">All Units</button>
-            <button class="filter-tab" data-filter="Unit 1"><i class="fas fa-book"></i> Unit 1</button>
-            <button class="filter-tab" data-filter="Unit 2"><i class="fas fa-book"></i> Unit 2</button>
-            <button class="filter-tab" data-filter="Unit 3"><i class="fas fa-book"></i> Unit 3</button>
-            <button class="filter-tab" data-filter="Unit 4"><i class="fas fa-book"></i> Unit 4</button>
-        </div>
-    </div>
-    '''
-    
-    # Create question cards
-    cards_html = '<div class="questions-grid">'
-    question_number = 1
-    
-    for unit_name in sorted(units.keys()):
-        for page in units[unit_name]:
-            marks_badge = f" • {page['marks']}" if page['marks'] else ""
-            subject = page['subject']
-            unit = page['unit']
-            
-            # Avoid duplicate labels when subject and unit are the same
-            if subject == unit:
-                badge_text = subject + marks_badge
-            else:
-                badge_text = f"{subject} • {unit}{marks_badge}"
-            
-            cards_html += f'''
-            <div class="question-card" data-unit="{page['unit']}" data-subject="{page['subject']}" onclick="window.location.href='{page['slug']}'">
-                <div class="question-number">Q{question_number}</div>
-                <div class="question-title">{page['title']}</div>
-                <div class="question-footer">
-                    <span class="question-unit"><i class="fas fa-tag"></i> {badge_text}</span>
-                    <button class="bookmark-btn" data-slug="{page['slug']}" data-title="{page['title']}" onclick="event.stopPropagation()">
-                        <i class="far fa-bookmark"></i>
-                    </button>
-                </div>
+    # Create subject selection cards
+    subject_cards = ''
+    for subject in main_subjects:
+        subject_cards += f'''
+        <div class="subject-card" onclick="window.location.href='subject-{subject['name'].lower().replace('#', 'sharp')}.html'" style="--card-color: {subject['color']}">
+            <div class="subject-icon">
+                <i class="fas {subject['icon']}"></i>
             </div>
-            '''
-            question_number += 1
+            <h2 class="subject-title">{subject['full_name']}</h2>
+            <p class="subject-description">{subject['description']}</p>
+            <div class="subject-count">{subject['count']} Questions</div>
+            <div class="subject-action">
+                <span>View Questions</span>
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+        '''
     
-    cards_html += '</div>'
-    
-    # Combine everything
+    # Combine everything for landing page
     index_content = f'''
     <div class="hero-section">
-        <h1><i class="fas fa-graduation-cap"></i> Machine Learning Notes</h1>
-        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 0;">Comprehensive study material with {len(pages)} questions across multiple subjects</p>
+        <h1><i class="fas fa-graduation-cap"></i> Study Notes</h1>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 0;">Select a subject to start learning</p>
     </div>
-    {search_html}
-    {cards_html}
+    
+    <div class="subject-selection-grid">
+        {subject_cards}
+    </div>
     '''
     
     base = (TEMPLATES / "base.html").read_text(encoding="utf-8")
-    index_html = base.replace("{title}", "Machine Learning Notes").replace("{content}", index_content)
+    index_html = base.replace("{title}", "Study Notes - Select Subject").replace("{content}", index_content)
     (OUT / "index.html").write_text(index_html, encoding="utf-8")
-    print("Generated index.html with modern UI")
+    print("Generated index.html with subject selection cards")
+    
+    # Generate individual subject pages
+    generate_subject_pages(pages, main_subjects)
+
+
+def generate_subject_pages(pages, main_subjects):
+    """Generate individual pages for each subject with questions"""
+    
+    for subject_info in main_subjects:
+        subject_name = subject_info['name']
+        subject_full = subject_info['full_name']
+        
+        # Filter pages for this subject
+        subject_pages = [p for p in pages if p['subject'] == subject_name]
+        
+        if not subject_pages:
+            continue
+        
+        # Group by unit
+        units = {}
+        for page in subject_pages:
+            unit = page['unit']
+            if unit not in units:
+                units[unit] = []
+            units[unit].append(page)
+        
+        # Create search and filter UI
+        search_html = f'''
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search questions...">
+        </div>
+        
+        <div class="filter-section">
+            <div class="filter-label">Filter by Unit:</div>
+            <div class="filter-tabs unit-tabs">
+                <button class="filter-tab active" data-filter="all-units">All Units</button>
+                <button class="filter-tab" data-filter="Unit 1"><i class="fas fa-book"></i> Unit 1</button>
+                <button class="filter-tab" data-filter="Unit 2"><i class="fas fa-book"></i> Unit 2</button>
+                <button class="filter-tab" data-filter="Unit 3"><i class="fas fa-book"></i> Unit 3</button>
+                <button class="filter-tab" data-filter="Unit 4"><i class="fas fa-book"></i> Unit 4</button>
+            </div>
+        </div>
+        '''
+        
+        # Create question cards
+        cards_html = '<div class="questions-grid">'
+        question_number = 1
+        
+        for unit_name in sorted(units.keys()):
+            for page in units[unit_name]:
+                marks_badge = f" • {page['marks']}" if page['marks'] else ""
+                unit = page['unit']
+                
+                # Avoid duplicate labels when subject and unit are the same
+                if subject_name == unit:
+                    badge_text = unit + marks_badge
+                else:
+                    badge_text = f"{unit}{marks_badge}"
+                
+                cards_html += f'''
+                <div class="question-card" data-unit="{page['unit']}" data-subject="{page['subject']}" onclick="window.location.href='{page['slug']}'">
+                    <div class="question-number">Q{question_number}</div>
+                    <div class="question-title">{page['title']}</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> {badge_text}</span>
+                        <button class="bookmark-btn" data-slug="{page['slug']}" data-title="{page['title']}" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                '''
+                question_number += 1
+        
+        cards_html += '</div>'
+        
+        # Back button to return to subject selection
+        back_button = '<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Subjects</a>'
+        
+        # Combine everything
+        subject_content = f'''
+        {back_button}
+        <div class="hero-section">
+            <h1><i class="fas {subject_info['icon']}"></i> {subject_full}</h1>
+            <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 0;">{len(subject_pages)} questions available</p>
+        </div>
+        {search_html}
+        {cards_html}
+        '''
+        
+        base = (TEMPLATES / "base.html").read_text(encoding="utf-8")
+        subject_html = base.replace("{title}", f"{subject_full} - Study Notes").replace("{content}", subject_content)
+        
+        # Write subject page
+        filename = f"subject-{subject_name.lower().replace('#', 'sharp')}.html"
+        (OUT / filename).write_text(subject_html, encoding="utf-8")
+        print(f"Generated {filename}")
 
 
 if __name__ == "__main__":

@@ -190,7 +190,6 @@ class QuestionFilter {
     this.searchInput = document.getElementById('searchInput');
     this.filterTabs = document.querySelectorAll('.filter-tab');
     this.questionCards = document.querySelectorAll('.question-card');
-    this.currentSubject = 'all';
     this.currentUnit = 'all-units';
     this.init();
   }
@@ -203,25 +202,13 @@ class QuestionFilter {
     this.filterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const filterValue = tab.getAttribute('data-filter');
-        const isSubjectTab = tab.closest('.subject-tabs') !== null;
         const isUnitTab = tab.closest('.unit-tabs') !== null;
         
-        if (isSubjectTab) {
-          // Update subject filter
-          document.querySelectorAll('.subject-tabs .filter-tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          this.currentSubject = filterValue;
-        } else if (isUnitTab) {
+        if (isUnitTab) {
           // Update unit filter
           document.querySelectorAll('.unit-tabs .filter-tab').forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
           this.currentUnit = filterValue;
-        } else {
-          // Legacy: single filter tab group (for backward compatibility)
-          this.filterTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          this.currentSubject = filterValue;
-          this.currentUnit = 'all-units';
         }
         
         this.filterQuestions();
@@ -235,13 +222,11 @@ class QuestionFilter {
     this.questionCards.forEach(card => {
       const title = card.querySelector('.question-title').textContent.toLowerCase();
       const unit = card.getAttribute('data-unit');
-      const subject = card.getAttribute('data-subject');
       
       const matchesSearch = title.includes(searchTerm);
-      const matchesSubject = this.currentSubject === 'all' || subject === this.currentSubject;
       const matchesUnit = this.currentUnit === 'all-units' || unit === this.currentUnit;
 
-      if (matchesSearch && matchesSubject && matchesUnit) {
+      if (matchesSearch && matchesUnit) {
         card.style.display = 'flex';
         // Add animation
         card.style.animation = 'fadeIn 0.3s ease';

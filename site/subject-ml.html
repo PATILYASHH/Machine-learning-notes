@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Machine Learning - Study Notes - Machine Learning Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
+  <meta name="theme-color" content="#0f1724" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-content">
+        <h1><a href="index.html"><i class="fas fa-brain"></i> ML Notes</a></h1>
+        <button class="bookmark-toggle" id="bookmarkToggle" title="View Bookmarks">
+          <i class="fas fa-bookmark"></i>
+          <span class="bookmark-count" id="bookmarkCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="bookmark-panel" id="bookmarkPanel">
+    <div class="bookmark-panel-header">
+      <h2><i class="fas fa-bookmark"></i> Bookmarks</h2>
+      <button class="close-panel" id="closePanel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="bookmark-list" id="bookmarkList">
+      <p class="empty-bookmarks">No bookmarks yet. Click the bookmark icon on any question to save it.</p>
+    </div>
+  </div>
+  
+  <main class="wrap content">
+    
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Subjects</a>
+        <div class="hero-section">
+            <h1><i class="fas fa-brain"></i> Machine Learning</h1>
+            <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 0;">28 questions available</p>
+        </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search questions...">
+        </div>
+        
+        <div class="filter-section">
+            <div class="filter-label">Filter by Unit:</div>
+            <div class="filter-tabs unit-tabs">
+                <button class="filter-tab active" data-filter="all-units">All Units</button>
+                <button class="filter-tab" data-filter="Unit 1"><i class="fas fa-book"></i> Unit 1</button>
+                <button class="filter-tab" data-filter="Unit 2"><i class="fas fa-book"></i> Unit 2</button>
+                <button class="filter-tab" data-filter="Unit 3"><i class="fas fa-book"></i> Unit 3</button>
+                <button class="filter-tab" data-filter="Unit 4"><i class="fas fa-book"></i> Unit 4</button>
+            </div>
+        </div>
+        
+        <div class="questions-grid">
+                <div class="question-card" data-unit="Unit 1" data-subject="ML" onclick="window.location.href='4Q1.html'">
+                    <div class="question-number">Q1</div>
+                    <div class="question-title">Explain different phases of predictive modeling (8 phases)</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 1 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="4Q1.html" data-title="Explain different phases of predictive modeling (8 phases)" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 1" data-subject="ML" onclick="window.location.href='4Q2.html'">
+                    <div class="question-number">Q2</div>
+                    <div class="question-title">Advantages and Disadvantages of K-nearest neighbor algorithm</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 1 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="4Q2.html" data-title="Advantages and Disadvantages of K-nearest neighbor algorithm" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 1" data-subject="ML" onclick="window.location.href='4Q3.html'">
+                    <div class="question-number">Q3</div>
+                    <div class="question-title">Define Machine Learning and explain features of machine learning</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 1 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="4Q3.html" data-title="Define Machine Learning and explain features of machine learning" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 1" data-subject="ML" onclick="window.location.href='Q4.html'">
+                    <div class="question-number">Q4</div>
+                    <div class="question-title">Explain Difference between Artificial Intelligence and Machine learning</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 1 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q4.html" data-title="Explain Difference between Artificial Intelligence and Machine learning" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 1" data-subject="ML" onclick="window.location.href='Q5.html'">
+                    <div class="question-number">Q5</div>
+                    <div class="question-title">Explain Development steps in Machine Learning</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 1 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q5.html" data-title="Explain Development steps in Machine Learning" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 1" data-subject="ML" onclick="window.location.href='Q6.html'">
+                    <div class="question-number">Q6</div>
+                    <div class="question-title">Explain K-nearest neighbor algorithm in detail</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 1 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q6.html" data-title="Explain K-nearest neighbor algorithm in detail" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 2" data-subject="ML" onclick="window.location.href='Q10.html'">
+                    <div class="question-number">Q7</div>
+                    <div class="question-title">Write a note on function approximation</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 2 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q10.html" data-title="Write a note on function approximation" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 2" data-subject="ML" onclick="window.location.href='Q11.html'">
+                    <div class="question-number">Q8</div>
+                    <div class="question-title">Explain in detail the application of Machine learning</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 2 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q11.html" data-title="Explain in detail the application of Machine learning" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 2" data-subject="ML" onclick="window.location.href='Q12.html'">
+                    <div class="question-number">Q9</div>
+                    <div class="question-title">What is the need for ML? Explain in detail classification of ML</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 2 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q12.html" data-title="What is the need for ML? Explain in detail classification of ML" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 2" data-subject="ML" onclick="window.location.href='Q13.html'">
+                    <div class="question-number">Q10</div>
+                    <div class="question-title">Explain steps to design a learning system</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 2 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q13.html" data-title="Explain steps to design a learning system" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 2" data-subject="ML" onclick="window.location.href='Q7.html'">
+                    <div class="question-number">Q11</div>
+                    <div class="question-title">State the goals of Machine Learning</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 2 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q7.html" data-title="State the goals of Machine Learning" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 2" data-subject="ML" onclick="window.location.href='Q8.html'">
+                    <div class="question-number">Q12</div>
+                    <div class="question-title">Write a note on speech Recognition and production recommendations</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 2 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q8.html" data-title="Write a note on speech Recognition and production recommendations" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 2" data-subject="ML" onclick="window.location.href='Q9.html'">
+                    <div class="question-number">Q13</div>
+                    <div class="question-title">Advantages and Disadvantages of machine learning</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 2 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q9.html" data-title="Advantages and Disadvantages of machine learning" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q14.html'">
+                    <div class="question-number">Q14</div>
+                    <div class="question-title">Explain bias and variance with example</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q14.html" data-title="Explain bias and variance with example" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q15.html'">
+                    <div class="question-number">Q15</div>
+                    <div class="question-title">Write a short note on confusion matrix</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q15.html" data-title="Write a short note on confusion matrix" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q16.html'">
+                    <div class="question-number">Q16</div>
+                    <div class="question-title">How to treat data in ML</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q16.html" data-title="How to treat data in ML" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q17.html'">
+                    <div class="question-number">Q17</div>
+                    <div class="question-title">What is Data pre-processing? Why do we need it?</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q17.html" data-title="What is Data pre-processing? Why do we need it?" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q18.html'">
+                    <div class="question-number">Q18</div>
+                    <div class="question-title">Explain performance measures of ML</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q18.html" data-title="Explain performance measures of ML" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q19.html'">
+                    <div class="question-number">Q19</div>
+                    <div class="question-title">Write a note on bootstrap sampling</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q19.html" data-title="Write a note on bootstrap sampling" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q20.html'">
+                    <div class="question-number">Q20</div>
+                    <div class="question-title">Difference between bagging and boosting</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q20.html" data-title="Difference between bagging and boosting" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q21.html'">
+                    <div class="question-number">Q21</div>
+                    <div class="question-title">Write a note on bagging aggregation</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q21.html" data-title="Write a note on bagging aggregation" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q22.html'">
+                    <div class="question-number">Q22</div>
+                    <div class="question-title">Explain in detail types of ML</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q22.html" data-title="Explain in detail types of ML" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q23.html'">
+                    <div class="question-number">Q23</div>
+                    <div class="question-title">What is bias and variance? Explain in detail</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q23.html" data-title="What is bias and variance? Explain in detail" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q24.html'">
+                    <div class="question-number">Q24</div>
+                    <div class="question-title">What is bias and variance and what is Bias-variance tradeoff?</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q24.html" data-title="What is bias and variance and what is Bias-variance tradeoff?" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 3" data-subject="ML" onclick="window.location.href='Q25.html'">
+                    <div class="question-number">Q25</div>
+                    <div class="question-title">Explain overfitting and underfitting in ML</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 3 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q25.html" data-title="Explain overfitting and underfitting in ML" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 4" data-subject="ML" onclick="window.location.href='Q26.html'">
+                    <div class="question-number">Q26</div>
+                    <div class="question-title">State and prove Bayes theorem with example</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 4 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q26.html" data-title="State and prove Bayes theorem with example" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 4" data-subject="ML" onclick="window.location.href='Q27.html'">
+                    <div class="question-number">Q27</div>
+                    <div class="question-title">What is probability? What are the rules of probability</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 4 • 8 marks</span>
+                        <button class="bookmark-btn" data-slug="Q27.html" data-title="What is probability? What are the rules of probability" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="question-card" data-unit="Unit 4" data-subject="ML" onclick="window.location.href='Q28.html'">
+                    <div class="question-number">Q28</div>
+                    <div class="question-title">Difference between permutation and combination</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> Unit 4 • 4 marks</span>
+                        <button class="bookmark-btn" data-slug="Q28.html" data-title="Difference between permutation and combination" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                </div>
+        
+  </main>
+  
+  <footer class="wrap site-footer">
+    <p>Machine Learning Notes • Study Material</p>
+  </footer>
+  
+  <script src="static/script.js"></script>
+</body>
+</html>

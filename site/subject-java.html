@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Java Programming - Study Notes - Machine Learning Notes</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Machine Learning Notes - Comprehensive study material" />
+  <meta name="theme-color" content="#0f1724" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-content">
+        <h1><a href="index.html"><i class="fas fa-brain"></i> ML Notes</a></h1>
+        <button class="bookmark-toggle" id="bookmarkToggle" title="View Bookmarks">
+          <i class="fas fa-bookmark"></i>
+          <span class="bookmark-count" id="bookmarkCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="bookmark-panel" id="bookmarkPanel">
+    <div class="bookmark-panel-header">
+      <h2><i class="fas fa-bookmark"></i> Bookmarks</h2>
+      <button class="close-panel" id="closePanel"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="bookmark-list" id="bookmarkList">
+      <p class="empty-bookmarks">No bookmarks yet. Click the bookmark icon on any question to save it.</p>
+    </div>
+  </div>
+  
+  <main class="wrap content">
+    
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Subjects</a>
+        <div class="hero-section">
+            <h1><i class="fas fa-coffee"></i> Java Programming</h1>
+            <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 0;">1 questions available</p>
+        </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search questions...">
+        </div>
+        
+        <div class="filter-section">
+            <div class="filter-label">Filter by Unit:</div>
+            <div class="filter-tabs unit-tabs">
+                <button class="filter-tab active" data-filter="all-units">All Units</button>
+                <button class="filter-tab" data-filter="Unit 1"><i class="fas fa-book"></i> Unit 1</button>
+                <button class="filter-tab" data-filter="Unit 2"><i class="fas fa-book"></i> Unit 2</button>
+                <button class="filter-tab" data-filter="Unit 3"><i class="fas fa-book"></i> Unit 3</button>
+                <button class="filter-tab" data-filter="Unit 4"><i class="fas fa-book"></i> Unit 4</button>
+            </div>
+        </div>
+        
+        <div class="questions-grid">
+                <div class="question-card" data-unit="General" data-subject="JAVA" onclick="window.location.href='java.html'">
+                    <div class="question-number">Q1</div>
+                    <div class="question-title">Java Questions</div>
+                    <div class="question-footer">
+                        <span class="question-unit"><i class="fas fa-tag"></i> General</span>
+                        <button class="bookmark-btn" data-slug="java.html" data-title="Java Questions" onclick="event.stopPropagation()">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                </div>
+        
+  </main>
+  
+  <footer class="wrap site-footer">
+    <p>Machine Learning Notes • Study Material</p>
+  </footer>
+  
+  <script src="static/script.js"></script>
+</body>
+</html>

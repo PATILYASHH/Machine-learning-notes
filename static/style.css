@@ -299,6 +299,119 @@ body {
   margin: 2rem 0;
 }
 
+/* Subject Selection Grid */
+.subject-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subject-card {
+  background: var(--card);
+  border: 3px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.subject-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.subject-card:hover::before {
+  transform: scaleX(1);
+}
+
+.subject-card:hover {
+  border-color: var(--card-color);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px var(--shadow);
+}
+
+.subject-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--card-color), var(--card-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.subject-card:hover .subject-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.subject-icon i {
+  font-size: 2.5rem;
+  color: var(--bg);
+}
+
+.subject-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.subject-description {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.subject-count {
+  background: rgba(125, 211, 252, 0.1);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.subject-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--card-color);
+  font-weight: 600;
+  transition: gap 0.3s ease;
+}
+
+.subject-card:hover .subject-action {
+  gap: 1rem;
+}
+
+.subject-action i {
+  transition: transform 0.3s ease;
+}
+
+.subject-card:hover .subject-action i {
+  transform: translateX(4px);
+}
+
 .question-card {
   background: var(--card);
   border: 2px solid var(--border);
